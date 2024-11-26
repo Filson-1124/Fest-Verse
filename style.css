@@ -461,7 +461,7 @@ main p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 270px;
+    height: 290px;
     width:250px;
     background-color: white;
     padding: 10px 30px 15px ;
@@ -520,7 +520,7 @@ main p{
 
 .artistPic{
     border-radius: 0.8rem;
-    height: 12rem;
+    height: 13rem;
     width: 100%;
     margin-top: 1rem;
     flex-shrink: 0;
@@ -1337,7 +1337,7 @@ justify-content: center;
         >.artistCard{
             flex-shrink: 0; 
             min-width: 300px; 
-            min-height: 300px;
+            min-height: 310px;
             margin: 0; 
             >p{
                 font-size: .5rem;
