@@ -1386,7 +1386,9 @@ footer {
   .travelguide {
     padding: 0;
     justify-content: start;
+    text-align: center;
   }
+
 
   .travelHeaders {
     flex-direction: column;
