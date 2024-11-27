@@ -78,7 +78,7 @@ section {
 }
 
 .MobileView-Sidebar {
-  display: none;
+  display: block;
 }
 
 .tix {
@@ -725,6 +725,7 @@ dialog {
 .travelHeaders li span {
   font-size: 1.5rem;
   font-weight: bolder;
+  color: #1722e7;
 }
 .mapPlaceholder {
   width: 500px;
@@ -1374,6 +1375,7 @@ main{
     margin: 0;
     align-self: start;
     flex-direction: column;
+    align-items: center;
   }
   .map-btn {
     width: 250px;
@@ -1388,7 +1390,7 @@ main{
   .map-container {
     background-color:  rgb(247, 190, 133);
     padding: 20px;
-    margin-left: 20px;
+    margin-left: 0px;
     gap: 10px;
     display: flex;
     height: 150px;
@@ -1411,8 +1413,8 @@ main{
   #mojaveIMG,
   #saharaIMG,
   #ferrisIMG {
-    margin-left: 20px;
-    width: 350px;
+    margin-left: 0px;
+    width:22.188rem;
     height: 250px;
   }
 
@@ -1436,12 +1438,14 @@ main{
     width: 100%;
 
     ul {
+      text-align: start;
       width: 100%;
       h4 {
-        font-size: 15px;
+        font-size: 1.5rem;
       }
       li {
         span {
+          color:#3941dc;
           font-size: 15px;
         }
         p {
