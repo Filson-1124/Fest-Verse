@@ -1,729 +1,880 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="index.js" defer></script>
-    
+        <!-- Styles and Scripts -->
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="index.js" defer></script>
 
-    <title>Home</title>
-</head>
-<body>
-    <nav id="sidebar">
-        <ul>
-            <li class="pcOnly">
-                <a href="festverse.html" ><span class="logo">FestVerse</span></a>
-                <button id="toggle-button" onclick=toggleSideBar()>
-                    <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/></svg>
-                </button>
-            </li>
-            <li class="mobileOnly">
-                <a href="festverse.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
-                </a>
-            </li>
-            <li class="link">
-                <a href="#heropage" onclick=setActive(this)>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-                    <span>Home</span>
-                </a>
-            </li>
-            <li class="link">
-                <a href="#about">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                    <span>
-                    About
-                </span>
-            </a>
-            </li>
+        <title>Coachella</title>
+    </head>
+    <body>
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar">
+            <ul>
+                <li class="DesktopView-Sidebar">
+                    <a href="festverse.html" >
+                        <span class="logo">FestVerse</span>
+                    </a>
+                    <button id="toggle-button" onclick=toggleSideBar()>
+                        <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M440-240 200-480l240-240 56 56-183 184 183 184-56 56Zm264 0L464-480l240-240 56 56-183 184 183 184-56 56Z"/>
+                        </svg>
+                    </button>
+                </li>
+
+                <li class="MobileView-Sidebar">
+                    <a href="festverse.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Navigation Links -->
+                <li class="link">
+                    <a href="#heropage" onclick=setActive(this)>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#about">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                </li>
+
                 <li class="link"> 
                     <a href="#artists">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M740-560h140v80h-80v220q0 42-29 71t-71 29q-42 0-71-29t-29-71q0-42 29-71t71-29q8 0 18 1.5t22 6.5v-208ZM120-160v-112q0-35 17.5-63t46.5-43q62-31 126-46.5T440-440q42 0 83.5 6.5T607-414q-20 12-36 29t-28 37q-26-6-51.5-9t-51.5-3q-57 0-112 14t-108 40q-9 5-14.5 14t-5.5 20v32h321q2 20 9.5 40t20.5 40H120Zm320-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T520-640q0-33-23.5-56.5T440-720q-33 0-56.5 23.5T360-640q0 33 23.5 56.5T440-560Zm0-80Zm0 400Z"/></svg> 
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M740-560h140v80h-80v220q0 42-29 71t-71 29q-42 0-71-29t-29-71q0-42 29-71t71-29q8 0 18 1.5t22 6.5v-208ZM120-160v-112q0-35 17.5-63t46.5-43q62-31 126-46.5T440-440q42 0 83.5 6.5T607-414q-20 12-36 29t-28 37q-26-6-51.5-9t-51.5-3q-57 0-112 14t-108 40q-9 5-14.5 14t-5.5 20v32h321q2 20 9.5 40t20.5 40H120Zm320-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T520-640q0-33-23.5-56.5T440-720q-33 0-56.5 23.5T360-640q0 33 23.5 56.5T440-560Zm0-80Zm0 400Z"/>
+                        </svg> 
                         <span>Artists</span>
-                   
-                </a>
-
-    
+                    </a>
                 </li>
 
                 <li class="link">
                     <a href="#maps">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="m600-120-240-84-186 72q-20 8-37-4.5T120-170v-560q0-13 7.5-23t20.5-15l212-72 240 84 186-72q20-8 37 4.5t17 33.5v560q0 13-7.5 23T812-192l-212 72Zm-40-98v-468l-160-56v468l160 56Zm80 0 120-40v-474l-120 46v468Zm-440-10 120-46v-468l-120 40v474Zm440-458v468-468Zm-320-56v468-468Z"/>
+                        </svg>
                         <span>Map</span>
                     </a>
-                  
                 </li>
 
                 <li class="link">
                     <a href="#travelguide">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M294.23-100v-80.77l116.92-82.08v-158.61L100-296.54v-99.23l311.15-218.61v-176.77q0-28.39 20.24-48.62Q451.62-860 480-860t48.61 20.23q20.24 20.23 20.24 48.62v176.77L860-395.77v99.23L548.85-421.46v158.61l116.53 82.08V-100L480-156.16 294.23-100Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M294.23-100v-80.77l116.92-82.08v-158.61L100-296.54v-99.23l311.15-218.61v-176.77q0-28.39 20.24-48.62Q451.62-860 480-860t48.61 20.23q20.24 20.23 20.24 48.62v176.77L860-395.77v99.23L548.85-421.46v158.61l116.53 82.08V-100L480-156.16 294.23-100Z"/>
+                        </svg>
                         <span>Travel Guide</span>
                     </a>
                 </li>
-            <li class="link">
-                <a href="#faq" onclick=setActive(this)>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                    <span>FAQ</span>
+
+                <li class="link">
+                    <a href="#faq" onclick=setActive(this)>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+                        </svg>
+                        <span>FAQ</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#gallery" onclick="secActive(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M80-80q29-74 38.5-152.5T130-390q-39-15-64.5-50T40-520v-80q115-38 234.5-116T480-880q86 86 205.5 164T920-600v80q0 45-25.5 80T830-390q2 79 11.5 157.5T880-80H80Zm156-520h488q-78-44-140.5-90.5T480-772q-41 35-103.5 81.5T236-600Zm344 140q25 0 42.5-17.5T640-520H520q0 25 17.5 42.5T580-460Zm-200 0q25 0 42.5-17.5T440-520H320q0 25 17.5 42.5T380-460Zm-200 0q25 0 42.5-17.5T240-520H120q0 25 17.5 42.5T180-460Zm6 300h107q9-60 14-119t8-119q-9-5-18-10.5T280-422q-15 15-32.5 24.5T210-383q-2 57-7 112.5T186-160Zm188 0h212q-8-55-12.5-110T566-381q-26-2-47.5-12.5T480-421q-17 17-39.5 27.5T394-381q-3 56-7.5 111T374-160Zm293 0h107q-12-55-17-110.5T750-383q-20-5-38-14.5T680-422q-8 8-17 13.5T645-398q3 60 8.5 119T667-160Zm113-300q25 0 42.5-17.5T840-520H720q0 25 17.5 42.5T780-460Z"/>
+                        </svg>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="#socials" onclick=setActive(this)>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/>
+                        </svg>
+                        <span>Socials</span>
+                    </a>
+                </li>
+
+                <li class="link">
+                    <a href="https://coachellamerch.shop" target="_blank">  
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/>
+                        </svg>           
+                        <span>Store</span>
+                    </a>              
+                </li>
+
+            </ul>
+            <div class="tix">
+                <a href="https://www.coachella.com/passes" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                        <path d="m368-320 112-84 110 84-42-136 112-88H524l-44-136-44 136H300l110 88-42 136ZM160-160q-33 0-56.5-23.5T80-240v-135q0-11 7-19t18-10q24-8 39.5-29t15.5-47q0-26-15.5-47T105-556q-11-2-18-10t-7-19v-135q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v135q0 11-7 19t-18 10q-24 8-39.5 29T800-480q0 26 15.5 47t39.5 29q11 2 18 10t7 19v135q0 33-23.5 56.5T800-160H160Zm0-80h640v-102q-37-22-58.5-58.5T720-480q0-43 21.5-79.5T800-618v-102H160v102q37 22 58.5 58.5T240-480q0 43-21.5 79.5T160-342v102Zm320-240Z"/>
+                    </svg>
+                    <span>Tickets</span>
                 </a>
-            </li>
-            <li class="lnk">
-                <a href="#gallery" onclick="secActive(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M80-80q29-74 38.5-152.5T130-390q-39-15-64.5-50T40-520v-80q115-38 234.5-116T480-880q86 86 205.5 164T920-600v80q0 45-25.5 80T830-390q2 79 11.5 157.5T880-80H80Zm156-520h488q-78-44-140.5-90.5T480-772q-41 35-103.5 81.5T236-600Zm344 140q25 0 42.5-17.5T640-520H520q0 25 17.5 42.5T580-460Zm-200 0q25 0 42.5-17.5T440-520H320q0 25 17.5 42.5T380-460Zm-200 0q25 0 42.5-17.5T240-520H120q0 25 17.5 42.5T180-460Zm6 300h107q9-60 14-119t8-119q-9-5-18-10.5T280-422q-15 15-32.5 24.5T210-383q-2 57-7 112.5T186-160Zm188 0h212q-8-55-12.5-110T566-381q-26-2-47.5-12.5T480-421q-17 17-39.5 27.5T394-381q-3 56-7.5 111T374-160Zm293 0h107q-12-55-17-110.5T750-383q-20-5-38-14.5T680-422q-8 8-17 13.5T645-398q3 60 8.5 119T667-160Zm113-300q25 0 42.5-17.5T840-520H720q0 25 17.5 42.5T780-460Z"/></svg>
-                    <span>Gallery</span>
-                </a>
-            </li>
-            <li class="link">
-                <a href="#socials" onclick=setActive(this)>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>
-
-                    <span>Socials</span>
-                </a>
-            </li>
-
-            <li class="link">
-                <a href="https://coachellamerch.shop" target="_blank">  
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg>
-                               
-                    <span>Store</span>
-                </a>
-              
-            </li>
-                
-        </ul>
-    <div class="tix">
-        <a href="https://www.coachella.com/passes" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m368-320 112-84 110 84-42-136 112-88H524l-44-136-44 136H300l110 88-42 136ZM160-160q-33 0-56.5-23.5T80-240v-135q0-11 7-19t18-10q24-8 39.5-29t15.5-47q0-26-15.5-47T105-556q-11-2-18-10t-7-19v-135q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v135q0 11-7 19t-18 10q-24 8-39.5 29T800-480q0 26 15.5 47t39.5 29q11 2 18 10t7 19v135q0 33-23.5 56.5T800-160H160Zm0-80h640v-102q-37-22-58.5-58.5T720-480q0-43 21.5-79.5T800-618v-102H160v102q37 22 58.5 58.5T240-480q0 43-21.5 79.5T160-342v102Zm320-240Z"/></svg>
-        <span>Tickets</span>
-    </a>
-    
-</div>
-    </nav>
-    <main id="mainContentContainer" >
-        <section class="heropage" id="heropage">
-            <div class="herocontent">
-        <h4>2025</h4>
- 
-            <h1>COACHELLA</h1>
-
-        
-        <p>"Under the stars where music's alive, Coachella's pulse through peoples hearts"</p>
-        <button id="buyBTN" onclick="openCoachellaPasses()">BUY TICKET</button>
-        <a href="#about" id="aboutButton" )>
-            <span>Explore coachella</span>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
-
-        </a>
-        
-    </div>
-
-        
-    </section>
-
-
-
-    <section class="about" id="about">
-        <h1 class="Title">What is Coachella?</h1>
-        <div class="picContainer">
-            <div class="picOfCoach"></div>
-        
-        </div>
-        
-    
-        <div class="contents">
-        <p>  Coachella was founded in 1999 by Paul Tollett and Goldenvoice after being inspired by a 1993 Pearl Jam concert at the Empire Polo Club in Indio, California. The event aimed to bring together diverse music genres and large-scale art installations in a desert setting. Originally a response to the rise of alternative festivals and dissatisfaction with the commercial nature of mainstream music events, Coachella has since evolved into one of the world’s most iconic music and arts festivals, attracting major artists and fans from around the globe.</p>
-    </div>
-    </section>
-
-
-    <section class="artists" id="artists">
-        <h1 class="Title">Artists</h1>
-
-    <div class="Coc">
-        <div class="artistsContainer">
-
-                <div class="artistCard r1" id="artistCard">
-                    <img src="img/Pics/Blackpink.jpg" alt="" class="artistPic">
-                    <h3>BLACKPINK</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">BLACKPINK is a South Korean girl group formed by YG Entertainment, debuting in 2016. The group consists of four members: Jisoo, Jennie, Rosé, and Lisa. Known for their dynamic performances, catchy music, and striking visuals, BLACKPINK quickly became one of the most popular K-pop acts globally.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Ddu-Du Ddu-Du, Kill This Love, Lovesick Girls, Pink Venom</p>
-                </div>
-
-                <div class="artistCard r2" id="artistCard">
-                    <img src="img/Pics/Billie Eilish.jpg" alt="" class="artistPic">
-                    <h3>Billie Eilish</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Billie Eilish is an American singer-songwriter known for her unique voice, genre-defying music, and deeply personal lyrics. Born December 18, 2001, in Los Angeles, California, she rose to fame as a teenager and has become one of the most influential artists of her generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Bad Guy, Ocean Eyes, When the Party's Over, Happier Than Ever</p>
-                </div>
-
-                <div class="artistCard r3" id="artistCard">
-                    <img src="img/Pics/Doja Cat.jpg" alt="" class="artistPic">
-                    <h3>DOJA CAT</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Doja Cat, born Amala Ratna Zandile Dlamini on October 21, 1995, in Los Angeles, California, is an American rapper, singer, songwriter, and record producer. Known for her genre-blending sound, striking visuals, and unique internet persona, Doja Cat has risen to global fame as one of the most versatile and innovative artists of her generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Say So, Kiss Me More, Juicy, Paint the Town Red, Need to Know</p>
-                </div>
-
-                <div class="artistCard r4" id="artistCard">
-                    <img src="img/Pics/twiceuuu.jpg" alt="" class="artistPic">
-                    <h3>TWICE</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">TWICE is a popular South Korean girl group formed by JYP Entertainment in 2015. Known for their catchy music, vibrant performances, and distinct concept, TWICE quickly became one of the biggest and most influential K-pop groups both in South Korea and internationally. Their appeal spans multiple regions, and they are one of the most successful K-pop groups of their generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Like Ooh-Ahh, Cheer Up, TT, Signal</p>
-                </div>
-
-                <div class="artistCard r5" id="artistCard">
-                    <img src="img/Pics/Megan Thee Stallion.jpg" alt="" class="artistPic">
-                    <h3>MEGAN THE STALION</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Megan Thee Stallion (born Megan Jovon Ruth Pete on February 15, 1995, in Houston, Texas) is an American rapper, singer, and songwriter. Known for her empowering lyrics, bold persona, and dynamic hip-hop style, she has become a leading figure in modern rap, breaking barriers for women and influencing pop culture.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Savage, WAP, Hot Girl Summer, Body</p>
-                </div>
             </div>
+        </nav>
 
-            <div class="artistsContainer"> 
-
-                <div class="artistCard r6" id="artistCard">
-                    <img src="img/Pics/chapelle.gif" alt="" class="artistPic">
-                    <h3>CHAPELL ROAN</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Chappell Roan is an American singer-songwriter known for her unique blend of pop and indie music, often characterized by bold, vibrant sounds and heartfelt lyrics. Born Kayleigh Rose Amstutz in Missouri, she adopted the stage name Chappell Roan as a tribute to her hometown, combining personal elements into her artistic persona. </p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Pink Pony Club, Naked in Manhattan, Casual</p>
-                </div>
-
-                <div class="artistCard r7" id="artistCard">
-                    <img src="img/Pics/Sabrina Carpenter 💋.jpg" alt="" class="artistPic">
-                    <h3>SABRINA CARPENTER</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Sabrina Carpenter is an American singer, songwriter, and actress known for her versatile talents and evolution from a Disney Channel star to a successful pop artist. Born on May 11, 1999, in Lehigh Valley, Pennsylvania, Carpenter began her career in acting before branching out into music.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Nonsense, Skin, Why, Sue Me</p>
-                </div>
-
-                <div class="artistCard r8" id="artistCard">
-                    <img src="img/Pics/Halsey.jpg" alt="" class="artistPic">
-                    <h3>HALSEY</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Halsey, born Ashley Nicolette Frangipane on September 29, 1994, in Edison, New Jersey, is an American singer, songwriter, and activist known for her distinct voice, emotional depth in her lyrics, and genre-blending sound that includes pop, alternative rock, electronic, and indie influences. Halsey has become one of the most influential and outspoken artists of her generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Without Me, Closer, Bad at Love, Graveyard
-                    </p>
-                </div>
-                <div class="artistCard r9" id="artistCard">
-                    <img src="img/Pics/Chris Brown.jpg" alt="" class="artistPic">
-                    <h3>CHRIS BROWN</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Chris Brown is an American singer, songwriter, dancer, and actor, born on May 5, 1989, in Tappahannock, Virginia. He is known for his smooth vocal style, impressive dance moves, and his ability to blend R&B, pop, hip-hop, and dance music. Chris Brown has had a significant impact on contemporary music and pop culture, although his career has also been marked by controversy.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Run It!, Kiss Kiss, With You, Forever</p>
-                </div>
-                <div class="artistCard r10" id="artistCard">
-                    <img src="img/Pics/SZA.jpg" alt="" class="artistPic">
-                    <h3>SZA</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">SZA (born Solána Imani Rowe on November 8, 1989, in St. Louis, Missouri) is an American singer-songwriter known for her emotive voice, introspective lyrics, and genre-blending sound that fuses R&B, neo-soul, and pop. She has become a major figure in contemporary R&B, celebrated for her vulnerability and artistic expression.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Saturn, The Weekend, Broken Clocks, Good Days</p>
-                </div>
-            </div>
-
-            <div class="artistsContainer"> 
-
-                <div class="artistCard r6" id="artistCard">
-                    <img src="img/Pics/Lana Del Rey.jpg" alt="" class="artistPic">
-                    <h3>LANA DEL REY</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Lana Del Rey is an American singer-songwriter known for her cinematic style, melancholic lyrics, and a nostalgic blend of pop, rock, and baroque influences. Born Elizabeth Woolridge Grant, she adopted the stage name Lana Del Rey and rose to prominence  with her viral hit "Video Games" in 2011, which was followed by her debut major-label album, "Born to Die" (2012).
-                        </p>
-                        <p class="hitSongs"><span>Hit Songs</span> : Summertime Sadness, Young and Beautiful, West Coast, Doin’ Time, Ride</p>
-                </div>
-
-                <div class="artistCard r7" id="artistCard">
-                    <img src="img/Pics/the weeknd.jpg" alt="" class="artistPic">
-                    <h3>THE WEEKND</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">The Weeknd, born Abel Makkonen Tesfaye on February 16, 1990, in Toronto, Canada, is a globally renowned singer, songwriter, and producer. Known for his haunting voice, genre-blending sound, and enigmatic persona, The Weeknd has become one of the most influential artists in contemporary music.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Blinding Lights, Save Your Tears, The Hills, Can't Feel My Face</p>
-                </div>
-
-                <div class="artistCard r8" id="artistCard">
-                    <img src="img/Pics/Bruno Mars.jpg" alt="" class="artistPic">
-                    <h3>BRUNO MARS</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Bruno Mars, born Peter Gene Hernandez on October 8, 1985, in Honolulu, Hawaii, is an American singer, songwriter, record producer, and performer known for his dynamic voice, retro-inspired sound, and energetic performances. With his smooth blend of pop, R&B, funk, soul, and rock, Bruno Mars has become one of the most successful and versatile artists of his generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Uptown Funk, Just the Way You Are, Grenade, 24K Magic</p>
-                </div>
-                <div class="artistCard r9" id="artistCard">
-                    <img src="img/Pics/Adele.jpg" alt="" class="artistPic">
-                    <h3>ADELLE</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Adele (full name Adele Laurie Blue Adkins) is a British singer-songwriter known for her powerful voice, emotional depth, and timeless ballads. Born on May 5, 1988, in Tottenham, London, Adele quickly became one of the most successful and critically acclaimed artists of her generation, renowned for her soulful delivery and ability to connect with audiences through deeply personal and relatable lyrics.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Chasing Pavements, Rolling in the Deep, Someone Like You</p>
-                </div>
-                <div class="artistCard r10" id="artistCard">
-                    <img src="img/Pics/Flyana Boss.jpg" alt="" class="artistPic">
-                    <h3>FLYANA BOSS</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Flyana Boss is an up-and-coming American hip-hop duo consisting of Flyana and Boss, known for their vibrant energy, bold lyrics, and genre-blending sound. Based in Los Angeles, Flyana Boss has been gaining attention for their unique mix of rap, pop, and R&B, with an emphasis on catchy hooks, confident delivery, and themes of empowerment, fun, and unapologetic self-expression.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: You Wish, Big Flex, Money Make Me</p>
-                </div>
-            </div>
-
-
-            <div class="artistsContainer"> 
-
-                <div class="artistCard r6" id="artistCard">
-                    <img src="img/Pics/Troye Sivan.jpg" alt="" class="artistPic">
-                    <h3>TROYE SIVAN</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Troye Sivan is an Australian singer-songwriter, actor, known for his impactful presence in pop music and entertainment. Born June 5, 1995, in Johannesburg, South Africa, he grew up in Perth, Australia. Starting as a YouTube creator, Sivan built a devoted following through his engaging content and musical talent.
-                    </p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Youth, My My My!, Dance to This, Bloom</p>
-                </div>
-
-                <div class="artistCard r7" id="artistCard">
-                    <img src="img/Pics/Ariana Grande.jpg" alt="" class="artistPic">
-                    <h3>ARIANA GRANDE</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Ariana Grande is an American singer, songwriter, and actress known for her exceptional vocal range, chart-topping hits, and iconic pop star presence. Born June 26, 1993, in Boca Raton, Florida, Grande began her career in theater and television before becoming one of the most successful recording artists of her generation.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: No Tears Left to Cry, Dangerous Woman, Into You, Break Free</p>
-                </div>
-
-                <div class="artistCard r8" id="artistCard">
-                    <img src="img/Pics/Lady Gaga.jpg" alt="" class="artistPic">
-                    <h3>LADY GAGA</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Lady Gaga, born Stefani Joanne Angelina Germanotta on March 28, 1986, in New York City, is an American singer, songwriter, actress, and activist known for her bold, unconventional style, powerful voice, and boundary-pushing art. She rose to fame in the late 2000s with her unique blend of pop, electronic, and dance music, becoming one of the most influential and iconic figures in modern pop culture.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Just Dance, Poker Face, Bad Romance, Born This Way
-                    </p>
-                </div>
-                <div class="artistCard r9" id="artistCard">
-                    <img src="img/Pics/Taylor Swift.jpg" alt="" class="artistPic">
-                    <h3>TAYLOR SWIFT</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">Taylor Swift is an American singer-songwriter who has become one of the most influential and successful artists in contemporary music. Known for her ability to craft deeply personal and relatable songs, Taylor has transitioned through several musical genres, from country to pop to indie/folk, and has consistently reinvented herself while maintaining a loyal fan base.</p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Blank Space, Love Story, You Belong with Me, Shake It Off</p>
-                </div>
-                <div class="artistCard r10" id="artistCard">
-                    <img src="img/Pics/ATEEZ/download (12).jpg" alt="" class="artistPic">
-                    <h3>ATEEZ</h3>
-                    <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                    </a>
-
-                    <p class="artistInfo">ATEEZ is a South Korean boy band formed by KQ Entertainment in 2018. Known for their powerful performances, energetic sound, and captivating stage presence, ATEEZ has quickly gained a global fanbase. The group is known for their strong blend of K-pop, hip-hop, electronic, and rock influences, along with their high-energy choreography and visually dynamic music videos.
-                    </p>
-                    <p class="hitSongs"><span>Hit Songs</span>: Pirate King, Say My Name, Wonderland, Answer</p>
-                </div>
-            </div>
-        </div>
-        <div class="sched">
-            <h1 class="Title">Schedules</h1>
-            <div class="schedButtons">
-                <button onclick="showDialogFirst()" class="showFirstSched"> Day 1</button>
-                <button onclick="showDialogSecond()" class="showSecondSched">Day 2</button>
-            </div>
-     
-    </section>
-   
+        <!-- Main Content Container -->
+        <main id="mainContentContainer" >
             
-        <dialog id="schedOne">
-            <div class="scroller">
-            <img src="img/sahara/1.png" alt="">
-        </div>
-            <button onclick="closeDialogFirst()">
-                Go back
-            </button>
-        </dialog>
-        <dialog id="schedTwo">
-            <div class="scroller">
-            <img src="img/sahara/2.png" alt="">
-        </div>
-            <button onclick="closeDialogSecond()">
-                Go back
-            </button>
-        </dialog>
-           
-        </h1>
-    </div>
-<hr>
+            <!-- Home Section -->
+            <section class="heropage" id="heropage">
+                <div class="herocontent">
+                    <h4>2025</h4>
+                    <h1>COACHELLA</h1>
+                    <p>"Under the stars where music's alive, Coachella's pulse through peoples hearts"</p>
+                        <button id="buyBTN" onclick="openCoachellaPasses()">BUY TICKET</button>
+                        <a href="#about" id="aboutButton">
+                            <span>Explore coachella</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+                            </svg>
+                        </a>
+                </div>
+            </section>
 
-<!-- MAPS -->
- <section class="mapOfCoachella" id="maps" >
-<div class="mapHeader">
-    <h1 class="Title">Map of Coachella</h1>
-</div>
-<section class="maps" id="maps">
-    <div class="map-container">
-        <div class="map-item">
-            <button class="map-btn" data-target="mainstageIMG">Coachella Main Stage</button>
-        </div>
-        <div class="map-item">
-            <button class="map-btn" data-target="outdoorIMG">Outdoor Theatre Stage</button>
-        </div>
-        <div class="map-item">
-            <button class="map-btn" data-target="gobitentIMG">Gobi Tent</button>
-        </div>
-        <div class="map-item">
-            <button class="map-btn" data-target="mojaveIMG">Mojave Stage</button>
-        </div>
-        <div class="map-item">
-            <button class="map-btn" data-target="saharaIMG">Sahara Stage</button>
-        </div>
-        <div class="map-item">
-            <button class="map-btn" data-target="ferrisIMG">Coachella Ferris Wheel</button>
-        </div>
-    </div>
+            <!-- About Section -->
+            <section class="about" id="about">
+                <h1 class="Title">What is Coachella?</h1>
+                <div class="picContainer">
+                    <div class="picOfCoach"></div>
+                </div>
+                <div class="contents">
+                    <p> <span><b>Coachella</b></span> was founded in 1999 by <span><b>Paul Tollett and Goldenvoice</b></span> after being inspired by a 1993 Pearl Jam 
+                        concert at the Empire Polo Club in Indio, California. The event aimed to bring together diverse music genres 
+                        and large-scale art installations in a desert setting. Originally a response to the rise of alternative festivals 
+                        and dissatisfaction with the commercial nature of mainstream music events, Coachella has since evolved into one of 
+                        the world’s most iconic music and arts festivals, attracting major artists and fans from around the globe.</p>
+                </div>
+            </section>
+            
+            <!-- Artist Section -->
+            <section class="artists" id="artists">
+                <h1 class="Title">Artists</h1>
+                <div class="Coc">
+                    <!-- Artist Container One -->
+                    <div class="artistsContainer">
 
-    <div class="map-holder">
-        <img id="mainstageIMG" class="visible" src="img/maps/Coachella Main Stage1.png" alt="Main Stage">
-        <img id="outdoorIMG" src="img/maps/Outdoor Theatre2.png" alt="Outdoor Theatre Stage">
-        <img id="gobitentIMG" src="img/maps/Gobi Tent2.png" alt="Gobi Tent Stage">
-        <img id="mojaveIMG" src="img/maps/Mojave Stage2.png" alt="Mojave Stage">
-        <img id="saharaIMG" src="img/maps/Sahara Stage1.png" alt="Sahara Stage">
-        <img id="ferrisIMG" src="img/maps/Coachella Ferris Wheel1.png" alt="Coachella Ferris Wheel">
-    </div>
-</section>
-</section>
-
-    <section class="travelguide" id="travelguide" >
-            <h1 class="Title">How to go to Coachella? </h1>
-                <div class="guideCons">
-                    <div class="travelHeaders">
-                        
-                         <ul>
-                            <h4>Airport Close to Coachella</h4>
-                            <li>
-                                <span>Palm Springs International Airport(PSP)</span>
-                                    <p> Distance to Coachella: 25 miles(30 mins by car approx.)</p>
-                            </li>
-                           
-                            <li>
-                                <span>Los Angeles International Airport(LAX)</span>
-                                    <p> Distance to Coachella: 145 miles( 2 hours 30 mins by car approx.)</p>
-                            </li>
-                            <li>
-                                <span>San Diego International Airport (SAN)</span>
-                                    <p> Distance to Coachella: 151 miles(2 hours 40 mins by car approx.)</p>
-                            </li>
-
-                         </ul>
-
-                       <div class="mapPlaceholder">
-                            <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114950.95549312566!2d-116.30312622468428!3d33.68608864812727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80da588e87ce3caf%3A0xfd521c797b97bcf8!2sCoachella%2C%20CA%2C%20USA!5e1!3m2!1sen!2sph!4v1730544594407!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                       </div>
-                     
-                       
-                    </div>
-
-                    <div class="travelDetails">
-                        <div class="firstPic">
-                            <img src="img/coachella/Poppy Palm Springs Vacation Rentals - Stay Connected With Us @staypoppy.jpg" alt="">
+                        <!-- Blackpink Container-->
+                        <div class="artistCard r1" id="artistCard">
+                            <img src="img/Pics/Blackpink.jpg" alt="Blackpink Group Photo" class="artistPic">
+                            <h3>BLACKPINK</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">BLACKPINK is a South Korean girl group formed by YG Entertainment, debuting in 2016. 
+                                The group consists of four members: Jisoo, Jennie, Rosé, and Lisa. Known for their dynamic performances, 
+                                catchy music, and striking visuals, BLACKPINK quickly became one of the most popular K-pop acts globally.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Ddu-Du Ddu-Du, Kill This Love, Lovesick Girls, Pink Venom</p>
                         </div>
-                        <p class="firstInfo">
-                            If you have already booked tickets to the Coachella festival and you need to organize how to get to the Empire Polo Club in Indigo then look no further as we have you covered!
-                            Coachella is located at the Empire Polo Club in Indio, California, meaning that although Coachella doesn’t have its own airport, the closest airport is Palm Springs International Airport. Airlines that fly to this airport include American Airlines, Delta Airlines and United Airlines.               However, due to prices and the location flying from, some people choose to fly to other nearby airports such as Los Angeles International Airport (LAX) or San Diego International Airport. You can then get a taxi, rent a car or get on one of the Coachella Shuttle buses from LAX to the festival, for about $50 dollars each way.           Obviously how you will get to Coachella will depend on where you are coming from. Domestic travel within the USA will be different to if you are flying from Europe. Here are some common routes of how to get to Coachella, and which airlines to fly with.
-                        </p>
+                        
+                        <!-- Billie Eilish Container-->
+                        <div class="artistCard r2" id="artistCard">
+                            <img src="img/Pics/Billie Eilish.jpg" alt="Billie Eilish Photo" class="artistPic">
+                            <h3>Billie Eilish</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Billie Eilish is an American singer-songwriter known for her unique voice, 
+                                genre-defying music, and deeply personal lyrics. Born December 18, 2001, in Los Angeles, California, 
+                                she rose to fame as a teenager and has become one of the most influential artists of her generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Bad Guy, Ocean Eyes, When the Party's Over, Happier Than Ever</p>
+                        </div>
+                        
+                        <!-- Doja Cat Container -->
+                        <div class="artistCard r3" id="artistCard">
+                            <img src="img/Pics/Doja Cat.jpg" alt="Doja Cat Photo" class="artistPic">
+                            <h3>DOJA CAT</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Doja Cat, born Amala Ratna Zandile Dlamini on October 21, 1995, in Los Angeles, 
+                                California, is an American rapper, singer, songwriter, and record producer. Known for her genre-blending 
+                                sound, striking visuals, and unique internet persona, Doja Cat has risen to global fame as one of the most
+                                 versatile and innovative artists of her generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Say So, Kiss Me More, Juicy, Paint the Town Red, Need to Know</p>
+                        </div>
+                        
+                        <!-- Twice Container -->
+                        <div class="artistCard r4" id="artistCard">
+                            <img src="img/Pics/twiceuuu.jpg" alt="Twice Group Photo" class="artistPic">
+                            <h3>TWICE</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">TWICE is a popular South Korean girl group formed by JYP Entertainment in 2015. 
+                                Known for their catchy music, vibrant performances, and distinct concept, TWICE quickly became one of the 
+                                biggest and most influential K-pop groups both in South Korea and internationally. Their appeal spans multiple 
+                                regions, and they are one of the most successful K-pop groups of their generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Like Ooh-Ahh, Cheer Up, TT, Signal</p>
+                        </div>
 
-                        <div class="secondPic">
-                            <img src="img/coachella/roger wilson imagines inflatable monuments and whimsical canopies enlivening coachella.jpg" alt=""> </div>
-
-                        <div class="secondInfo">
-                            <h3>Flying domestically to Coachella</h3>
-
-                            
-                                    <p>Palm Springs International Airport offers a wide range of domestic carriers to a host of US cities. If heading to Coachella through Palm Springs you'll e   asily be able to travel from Nashville, Indianapolis, Chicago, Dallas, Seattle, Atlanta, Boston, Los Angeles, New York, Las Vegas and more. This makes travelling to the festival really easy if you're a domestic traveller.</p>
-
-                            <h3>Flying from New York</h3>
-
-                                    <p>Flying domestically to Coachella means that you have more options for where to fly to, however, it will still be cheaper to fly to LAX. From JFK airport, you can fly to LAX with airlines such as Alaska Airlines, Delta or American Airlines. Alternatively, suppose you want to fly to Palm Springs, we recommend flying with airlines such as United, from New York La Guardia with a short stopover at Houston Airport, or from New York JFK to American Airlines with a short stopover at Phoenix Airport.</p>
-
-                            <h3>Flights from Las Vegas</h3>
-
-                                    <p>You can fly to Palm Springs Airport from Las Vegas McCarran with American Airlines which will feature a stopover at Phoenix. Alternatively, you can fly directly if choosing to fly to LAX, with Alaska, United or Delta.</p>
+                        <!-- Megan Thee Stallion Container -->
+                        <div class="artistCard r5" id="artistCard">
+                            <img src="img/Pics/Megan Thee Stallion.jpg" alt="Megan Thee Stallion Photo" class="artistPic">
+                            <h3>MEGAN THE STALION</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Megan Thee Stallion (born Megan Jovon Ruth Pete on February 15, 1995, in Houston, Texas) 
+                                is an American rapper, singer, and songwriter. Known for her empowering lyrics, bold persona, and dynamic 
+                                hip-hop style, she has become a leading figure in modern rap, breaking barriers for women and influencing 
+                                pop culture.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Savage, WAP, Hot Girl Summer, Body</p>
+                        </div>
                     </div>
-
-                   
-                    <div class="thirdPic">
-                        <img src="img/coachella/International Flags.jpg" alt="">
-                    </div>
-                    <div class="thirdInfo">
-                        <h3>Flying from an international destination to Coachella</h3>
-
-                                <p>Palm Springs International Airport also has limited international destinations. The airline only offers direct services to Canada with the cities of Vancouver, Toronto, Edmonton, Calgary and Winnipeg being served. If travelling from further afield it may be beneficial to connect through one of the major carriers' hub airports, such as with American Airlines and their Dallas hub. However, you also have the option of flying into Los Angeles or San Diego airports, which have a greater level of international routes.</p>
-
-                       <h3> Flying from the UK & Ireland</h3>
-
-                                <p>Flying from London Heathrow, we recommend flying to LAX as this has many more flights arriving from the UK. Airlines that offer non-stop flights include British Airways, Virgin Atlantic, United Airlines, Delta and American Airlines. Alternatively, you could plan a short stop-over in Vancouver, and fly with Air Canada, Westjet or Air Transat for a lower price. To fly to Coachella from Dublin, we again recommend to fly to LAX. Flights here from Dublin are considerably cheaper than flying to the closer Palm Springs. Aer Lingus fly direct from Dublin to LAX, but to make it cheaper, airlines that fly this route with a stopover at London Heathrow include American Airlines. Check out our blog to find out how to plan the perfect stopover.</p>
-                    </div>
-                   
-                    </div>
-                </div>
-         </section>
-
-
-    
-    <section class="FAQ" id="faq">
-        <div class="FAQTitle">
-            <h1 class="Title">FAQs</h1>
-            <h3>Have any questions? Read popular answers below.</h3>
-
-        </div>
-        <div class="faqQuestions">
-           
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: is this website owned by Coachella?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A:No, We are not owned by any company, Tierra Dela Musica is a standalone company that can be hired to feature or promote a festival through an interactive website.
-                    </p>
-                </div>    
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: How many passes I can buy?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: Ticket limit is 4 per household. Purchase over 4 admission tickets  will be subject to cancellation without notice. 
-                    </p>
-                </div>  
-                <div class="questions long">
-                    <div class="questionHeader"> 
-                    <h4>Q: Do you promote any other things other than Musical Festival?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: No , Our company is only dedicated on creating interactive static website for music festivals to be promoted.
-                    </p>
-                </div>  
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: When is the last date to update my shipping address?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: The last day to update your shipping address is February 2025
-                    </p>
-                </div>  
-       
-
-
-           
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: What's the weekend schedule?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: Schedules are released closer to the event dates
-                    </p>
-                </div>  
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: What is your refund policy?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: All sales are final
-                    </p>
-                </div>  
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: Are there extra fees?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: Any taxes abd fees will be reflected  for each item in your total before purchasing.
-                    </p>
-                </div>  
-                <div class="questions">
-                    <div class="questionHeader"> 
-                    <h4>Q: is there a payment plan for tickets?</h4> 
-
-                    <a onclick="toggleFAQ(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                        </a>
-                </div>
-
-                    <p>
-                        A: Yes, we offer a payment plan option for your order at checkout. Please note all payment in a payment plan will incur a flat $52 payment plan fee.
-                    </p>
                 
-            </div>
-        </div>
-    </section>
-    <section class="Gallery" id="gallery">
-        <div class="galHeader"><h1 class="Title">Gallery</h1></div>
-        <div class="infiteGallery">
-            <div class="gal1">
-                <img src="img/Genre1/pic1.png" alt="" class="gal1pic pic1">
-                <img src="img/Genre1/pic2.png" alt="" class="gal1pic pic2">
-                <img src="img/Genre1/pic3.png" alt="" class="gal1pic pic3">
-                <img src="img/Genre1/pic4.png" alt="" class="gal1pic pic4">
-                <img src="img/Genre1/pic5.png" alt="" class="gal1pic pic5">
-                <img src="img/Genre1/pic6.png" alt="" class="gal1pic pic6">
- 
-            </div>
-            <div class="gal2">
-                <img src="img/Genre2/BILLIE EILISH.png" alt="" class="gal2pic gpic1">
-                <img src="img/Genre2/LANA DEL REY.png" alt="" class="gal2pic gpic2">
-                <img src="img/Genre2/LE SSERAFIM.png" alt="" class="gal2pic gpic3">
-                <img src="img/Genre2/NIKI.png" alt="" class="gal2pic gpic4">
-                <img src="img/Genre2/SABRINA CARPENTER.png" alt="" class="gal2pic gpic5">
-                <img src="img/Genre2/TAYLOR SWIFT.png" alt="" class="gal2pic gpic6">
-                <img src="img/Genre2/THE WEEKND.png" alt="" class="gal2pic gpic7">
-            </div>
-            <div class="gal3">
-                <img src="img/Genre3/1.png" alt="" class="gal3pic hpic1">
-                <img src="img/Genre3/2.png" alt="" class="gal3pic hpic2">
-                <img src="img/Genre3/3.png" alt="" class="gal3pic hpic3">
-                <img src="img/Genre3/4.png" alt="" class="gal3pic hpic4">
-                <img src="img/Genre3/5.png" alt="" class="gal3pic hpic5">
-                <img src="img/Genre3/6.png" alt="" class="gal3pic hpic6">
-            </div>
-        </div>
-    </section>
+                    <!-- Artist Container Two -->
+                    <div class="artistsContainer"> 
 
-    <footer id="socials">
-        <h1 class="Title">FestVerse</h1>
-        <div class="mainContents">
-            <div class="socialIcons">
-                <a href="">
-                    <img src="img/icons/facebook (1).png" alt="">
-                </a>
-                <a href="">
-                    <img src="img/icons/twitter (3).png" alt="">
-                </a>
-                <a href=""><img src="img/icons/instagram (3).png" alt=""></a>
-                <a href="">
-                    <img src="img/icons/tiktok (1).png" alt="">
-                </a>
-                <a href="">
-                    <img src="img/icons/youtube.png" alt="">
-                </a>
-                <a href="">
-                    <img src="img/icons/discord.png" alt="">
-                </a>
-            </div>
+                        <!-- Chapelle Roan Container-->
+                        <div class="artistCard r6" id="artistCard">
+                            <img src="img/Pics/chapelle.gif" alt="Chappell Roan Photo" class="artistPic">
+                            <h3>CHAPELL ROAN</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Chappell Roan is an American singer-songwriter known for her unique blend of pop and 
+                                indie music, often characterized by bold, vibrant sounds and heartfelt lyrics. Born Kayleigh Rose Amstutz 
+                                in Missouri, she adopted the stage name Chappell Roan as a tribute to her hometown, combining personal elements 
+                                into her artistic persona. </p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Pink Pony Club, Naked in Manhattan, Casual</p>
+                        </div>
+                        
+                        <!-- Sabrina Carpenter Container -->
+                        <div class="artistCard r7" id="artistCard">
+                            <img src="img/Pics/Sabrina Carpenter 💋.jpg" alt="Sabrina Carpenter Photo" class="artistPic">
+                            <h3>SABRINA CARPENTER</h3>
+                                <a onclick="toggleCard(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                                </a>
+                                <p class="artistInfo">Sabrina Carpenter is an American singer, songwriter, and actress known for her 
+                                    versatile talents and evolution from a Disney Channel star to a successful pop artist. Born on May 11, 1999, 
+                                    in Lehigh Valley, Pennsylvania, Carpenter began her career in acting before branching out into music.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Nonsense, Skin, Why, Sue Me</p>
+                        </div>
 
-            <div class="diKoNaAlamAnoName">
-            <div class="contacts">
-                <a href="">festVerse@gmail.com</a>
-                <a href="">Health and Safety</a>
-                <a href="">Web Accessibility</a>
-               
-            </div>
-            <div class="msc">
-                <a href="">Partners</a>
-                <a href="">Feedback</a>
-            </div>
-        </div>
-        </div>
-       <div class="creds">
-        
-        <div class="pinds"> 
-            <a href="">Terms</a>
-            <a href="">Privacy</a>
-            <a href="">Purchase Agreement</a>
-        </div>
-        <h4>&copy; FestVerse. All Rghts Reserved.</h4>
-           
-       </div>
-    </footer>
-    
-    </main>
-   
-    
-</body>
+                        <!-- Halsey Container -->
+                        <div class="artistCard r8" id="artistCard">
+                            <img src="img/Pics/Halsey.jpg" alt="Halsey Photo" class="artistPic">
+                            <h3>HALSEY</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Halsey, born Ashley Nicolette Frangipane on September 29, 1994, in Edison, New Jersey, 
+                                is an American singer, songwriter, and activist known for her distinct voice, emotional depth in her lyrics, 
+                                and genre-blending sound that includes pop, alternative rock, electronic, and indie influences. Halsey has 
+                                become one of the most influential and outspoken artists of her generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Without Me, Closer, Bad at Love, Graveyard</p>
+                        </div>
+                        
+                        <!-- Chris Brown Container -->
+                        <div class="artistCard r9" id="artistCard">
+                            <img src="img/Pics/Chris Brown.jpg" alt="Chris Brown Photo" class="artistPic">
+                            <h3>CHRIS BROWN</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Chris Brown is an American singer, songwriter, dancer, and actor, born on May 5, 1989, 
+                                in Tappahannock, Virginia. He is known for his smooth vocal style, impressive dance moves, and his ability 
+                                to blend R&B, pop, hip-hop, and dance music. Chris Brown has had a significant impact on contemporary music 
+                                and pop culture, although his career has also been marked by controversy.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Run It!, Kiss Kiss, With You, Forever</p>
+                        </div>
+                    
+                        <!-- Sza Container -->
+                        <div class="artistCard r10" id="artistCard">
+                            <img src="img/Pics/SZA.jpg" alt="Sza Photo" class="artistPic">
+                            <h3>SZA</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">SZA (born Solána Imani Rowe on November 8, 1989, in St. Louis, Missouri) 
+                                is an American singer-songwriter known for her emotive voice, introspective lyrics, and genre-blending sound 
+                                that fuses R&B, neo-soul, and pop. She has become a major figure in contemporary R&B, celebrated for her 
+                                vulnerability and artistic expression.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Saturn, The Weekend, Broken Clocks, Good Days</p>
+                        </div>
+                    </div>
+
+                    <!-- Artist Container Three -->
+                    <div class="artistsContainer"> 
+                        
+                        <!-- Lana Del Rey Container -->
+                        <div class="artistCard r6" id="artistCard">
+                            <img src="img/Pics/Lana Del Rey.jpg" alt="Lana Del Ray Photo" class="artistPic">
+                            <h3>LANA DEL REY</h3>
+                                <a onclick="toggleCard(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                                </a>
+                            <p class="artistInfo">Lana Del Rey is an American singer-songwriter known for her cinematic style, 
+                                melancholic lyrics, and a nostalgic blend of pop, rock, and baroque influences. Born Elizabeth Woolridge Grant, 
+                                she adopted the stage name Lana Del Rey and rose to prominence  with her viral hit "Video Games" in 2011, 
+                                which was followed by her debut major-label album, "Born to Die" (2012).</p>
+                            <p class="hitSongs"><span>Hit Songs</span> : Summertime Sadness, Young and Beautiful, West Coast, Doin’ Time, Ride</p>
+                        </div>
+
+                        <!-- The Weeknd Container-->
+                        <div class="artistCard r7" id="artistCard">
+                            <img src="img/Pics/the weeknd.jpg" alt="The Weeknd Photo" class="artistPic">
+                            <h3>THE WEEKND</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">The Weeknd, born Abel Makkonen Tesfaye on February 16, 1990, in Toronto, Canada, is a 
+                                globally renowned singer, songwriter, and producer. Known for his haunting voice, genre-blending sound, and 
+                                enigmatic persona, The Weeknd has become one of the most influential artists in contemporary music.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Blinding Lights, Save Your Tears, The Hills, Can't Feel My Face</p>
+                        </div>
+
+                        <!-- Bruno Mars Container -->
+                        <div class="artistCard r8" id="artistCard">
+                            <img src="img/Pics/Bruno Mars.jpg" alt="Bruno Mars Photo" class="artistPic">
+                            <h3>BRUNO MARS</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Bruno Mars, born Peter Gene Hernandez on October 8, 1985, in Honolulu, Hawaii, 
+                                is an American singer, songwriter, record producer, and performer known for his dynamic voice, 
+                                retro-inspired sound, and energetic performances. With his smooth blend of pop, R&B, funk, soul, and rock, 
+                                Bruno Mars has become one of the most successful and versatile artists of his generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Uptown Funk, Just the Way You Are, Grenade, 24K Magic</p>
+                        </div>
+                        
+                        <!-- Adelle Container -->
+                        <div class="artistCard r9" id="artistCard">
+                            <img src="img/Pics/Adele.jpg" alt="Adelle Photo" class="artistPic">
+                            <h3>ADELLE</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Adele (full name Adele Laurie Blue Adkins) is a British singer-songwriter known for her powerful
+                                 voice, emotional depth, and timeless ballads. Born on May 5, 1988, in Tottenham, London, Adele quickly 
+                                 became one of the most successful and critically acclaimed artists of her generation, renowned for her soulful
+                                  delivery and ability to connect with audiences through deeply personal and relatable lyrics.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Chasing Pavements, Rolling in the Deep, Someone Like You</p>
+                        </div>
+                        
+                        <!-- Flyana Boss Container -->
+                        <div class="artistCard r10" id="artistCard">
+                            <img src="img/Pics/Flyana Boss.jpg" alt="Flyana Boss Photo" class="artistPic">
+                            <h3>FLYANA BOSS</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Flyana Boss is an up-and-coming American hip-hop duo consisting of Flyana and Boss, 
+                                known for their vibrant energy, bold lyrics, and genre-blending sound. Based in Los Angeles, Flyana Boss has 
+                                been gaining attention for their unique mix of rap, pop, and R&B, with an emphasis on catchy hooks, confident
+                                 delivery, and themes of empowerment, fun, and unapologetic self-expression.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: You Wish, Big Flex, Money Make Me</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Artist Container Four -->
+                    <div class="artistsContainer"> 
+
+                        <!-- Troye Sivan Container -->
+                        <div class="artistCard r6" id="artistCard">
+                            <img src="img/Pics/Troye Sivan.jpg" alt="Troye Sivan Photo" class="artistPic">
+                            <h3>TROYE SIVAN</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Troye Sivan is an Australian singer-songwriter, actor, known for his 
+                                impactful presence in pop music and entertainment. Born June 5, 1995, in Johannesburg, South Africa, 
+                                he grew up in Perth, Australia. Starting as a YouTube creator, Sivan built a devoted following through
+                                 his engaging content and musical talent.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Youth, My My My!, Dance to This, Bloom</p>
+                        </div>
+
+                        <!-- Ariana Grande Container -->
+                        <div class="artistCard r7" id="artistCard">
+                            <img src="img/Pics/Ariana Grande.jpg" alt="Ariana Grande Photo" class="artistPic">
+                            <h3>ARIANA GRANDE</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Ariana Grande is an American singer, songwriter, and actress known for her 
+                                exceptional vocal range, chart-topping hits, and iconic pop star presence. Born June 26, 1993, in Boca Raton, 
+                                Florida, Grande began her career in theater and television before becoming one of the most successful recording 
+                                artists of her generation.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: No Tears Left to Cry, Dangerous Woman, Into You, Break Free</p>
+                        </div>
+
+                        <!-- Lady Gaga Container -->
+                        <div class="artistCard r8" id="artistCard">
+                            <img src="img/Pics/Lady Gaga.jpg" alt="Lady Gaga Photo" class="artistPic">
+                            <h3>LADY GAGA</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Lady Gaga, born Stefani Joanne Angelina Germanotta on March 28, 1986, in New York City, 
+                                is an American singer, songwriter, actress, and activist known for her bold, unconventional style, powerful 
+                                voice, and boundary-pushing art. She rose to fame in the late 2000s with her unique blend of pop, electronic, 
+                                and dance music, becoming one of the most influential and iconic figures in modern pop culture.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Just Dance, Poker Face, Bad Romance, Born This Way</p>
+                        </div>
+
+                        <!-- Taylor Swift Container -->
+                        <div class="artistCard r9" id="artistCard">
+                            <img src="img/Pics/Taylor Swift.jpg" alt="Taylor Swift Photo" class="artistPic">
+                            <h3>TAYLOR SWIFT</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">Taylor Swift is an American singer-songwriter who has become one of the most influential 
+                                and successful artists in contemporary music. Known for her ability to craft deeply personal and relatable songs, 
+                                Taylor has transitioned through several musical genres, from country to pop to indie/folk, and has consistently 
+                                reinvented herself while maintaining a loyal fan base.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Blank Space, Love Story, You Belong with Me, Shake It Off</p>
+                        </div>
+                        
+                        <!-- Ateez Container -->
+                        <div class="artistCard r10" id="artistCard">
+                            <img src="img/Pics/ATEEZ/download (12).jpg" alt="Ateez Container" class="artistPic">
+                            <h3>ATEEZ</h3>
+                                <a onclick="toggleCard(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                    </svg>
+                                </a>
+                            <p class="artistInfo">ATEEZ is a South Korean boy band formed by KQ Entertainment in 2018. Known for their 
+                                powerful performances, energetic sound, and captivating stage presence, ATEEZ has quickly gained a global fanbase.
+                                 The group is known for their strong blend of K-pop, hip-hop, electronic, and rock influences, along with 
+                                 their high-energy choreography and visually dynamic music videos.</p>
+                            <p class="hitSongs"><span>Hit Songs</span>: Pirate King, Say My Name, Wonderland, Answer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Schedule Section -->
+                <div class="sched">
+                    <h1 class="Title">Schedules</h1>
+                    <div class="schedButtons">
+                        <button onclick="showDialogFirst()" class="showFirstSched"> Day 1</button>
+                        <button onclick="showDialogSecond()" class="showSecondSched">Day 2</button>
+                    </div>
+                </div>
+
+                <!-- Schedule One -->
+                <dialog id="schedOne">
+                    <div class="scroller">
+                        <img src="img/sahara/1.png" alt="Schedule One Photo">
+                    </div>
+                        <button onclick="closeDialogFirst()">Go back</button>
+                </dialog>
+
+                <!-- Schedule Two -->
+                <dialog id="schedTwo">
+                    <div class="scroller">
+                        <img src="img/sahara/2.png" alt="Schedule Two Photo">
+                    </div>
+                    <button onclick="closeDialogSecond()">Go back</button>
+                </dialog>
+
+            </section>
+
+            <!-- Map Section -->
+            <section class="mapOfCoachella" id="maps" >
+                <div class="mapHeader">
+                    <h1 class="Title">Map of Coachella</h1>
+                </div>
+                <section class="maps" id="maps">
+                    <div class="map-container">
+                        <div class="map-item">
+                            <button class="map-btn" data-target="mainstageIMG">Coachella Main Stage</button>
+                        </div>
+                        <div class="map-item">
+                            <button class="map-btn" data-target="outdoorIMG">Outdoor Theatre Stage</button>
+                        </div>
+                        <div class="map-item">
+                            <button class="map-btn" data-target="gobitentIMG">Gobi Tent</button>
+                        </div>
+                        <div class="map-item">
+                            <button class="map-btn" data-target="mojaveIMG">Mojave Stage</button>
+                        </div>
+                        <div class="map-item">
+                            <button class="map-btn" data-target="saharaIMG">Sahara Stage</button>
+                        </div>
+                        <div class="map-item">
+                            <button class="map-btn" data-target="ferrisIMG">Coachella Ferris Wheel</button>
+                        </div>
+                    </div>
+
+                    <div class="map-holder">
+                        <img id="mainstageIMG" class="visible" src="img/maps/Coachella Main Stage1.png" alt="Main Stage">
+                        <img id="outdoorIMG" src="img/maps/Outdoor Theatre2.png" alt="Outdoor Theatre Stage">
+                        <img id="gobitentIMG" src="img/maps/Gobi Tent2.png" alt="Gobi Tent Stage">
+                        <img id="mojaveIMG" src="img/maps/Mojave Stage2.png" alt="Mojave Stage">
+                        <img id="saharaIMG" src="img/maps/Sahara Stage1.png" alt="Sahara Stage">
+                        <img id="ferrisIMG" src="img/maps/Coachella Ferris Wheel1.png" alt="Coachella Ferris Wheel">
+                    </div>
+                </section>
+            </section>
+
+            <!-- Travel Guide Section -->
+            <section class="travelguide" id="travelguide">
+                <h1 class="Title">How to go to Coachella? </h1>
+                    <div class="guideCons">
+
+                        <!-- Travel Headers -->
+                        <div class="travelHeaders"> 
+                            <ul>
+                                <h4>Airport Close to Coachella</h4>
+                                <li>
+                                    <span>Palm Springs International Airport(PSP)</span>
+                                    <p> Distance to Coachella: 25 miles(30 mins by car approx.)</p>
+                                </li>
+                                <li>
+                                    <span>Los Angeles International Airport(LAX)</span>
+                                        <p> Distance to Coachella: 145 miles( 2 hours 30 mins by car approx.)</p>
+                                </li>
+                                <li>
+                                    <span>San Diego International Airport (SAN)</span>
+                                    <p> Distance to Coachella: 151 miles(2 hours 40 mins by car approx.)</p>
+                                </li>
+                            </ul>
+
+                        <div class="mapPlaceholder">
+                                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114950.95549312566!2d-116.30312622468428!3d33.68608864812727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80da588e87ce3caf%3A0xfd521c797b97bcf8!2sCoachella%2C%20CA%2C%20USA!5e1!3m2!1sen!2sph!4v1730544594407!5m2!1sen!2sph" 
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        </div>
+
+                        <!-- Travel Details -->
+                        <div class="travelDetails">
+                            <div class="firstPic">
+                                <img src="img/coachella/Poppy Palm Springs Vacation Rentals - Stay Connected With Us @staypoppy.jpg" 
+                                alt="Poppy Palm Springs Vacation Rentals Photo">
+                            </div>
+                                
+                                <p class="firstInfo">
+                                    <span>Details on how to get to Empire Polo Club in Indigo: </span>If you have already booked tickets to the Coachella festival and you need to organize how to get to 
+                                    the Empire Polo Club in Indigo then look no further as we have you covered!
+                                    Coachella is located at the Empire Polo Club in Indio, California, meaning that although Coachella 
+                                    doesn’t have its own airport, the closest airport is Palm Springs International Airport. Airlines that fly 
+                                    to this airport include American Airlines, Delta Airlines and United Airlines.               However, 
+                                    due to prices and the location flying from, some people choose to fly to other nearby airports such as Los 
+                                    Angeles International Airport (LAX) or San Diego International Airport. You can then get a taxi, rent a 
+                                    car or get on one of the Coachella Shuttle buses from LAX to the festival, for about $50 dollars each way.           
+                                    Obviously how you will get to Coachella will depend on where you are coming from. Domestic travel 
+                                    within the USA will be different to if you are flying from Europe. Here are some common routes of how to 
+                                    get to Coachella, and which airlines to fly with.
+                                </p>
+                                
+                
+                            <div class="secondPic">
+                                <img src="img/coachella/roger wilson imagines inflatable monuments and whimsical canopies enlivening coachella.jpg" 
+                                alt="Inflatable Monuments Photo"> 
+                            </div>
+
+                            <div class="secondInfo">
+                                <h3>Flying domestically to Coachella</h3>
+                                        <p>Palm Springs International Airport offers a wide range of domestic carriers to a host of US cities. 
+                                            If heading to Coachella through Palm Springs you'll e   asily be able to travel from Nashville, 
+                                            Indianapolis, Chicago, Dallas, Seattle, Atlanta, Boston, Los Angeles, New York, Las Vegas and more. 
+                                            This makes travelling to the festival really easy if you're a domestic traveller.</p>
+                                <h3>Flying from New York</h3>
+                                        <p>Flying domestically to Coachella means that you have more options for where to fly to, 
+                                            however, it will still be cheaper to fly to LAX. From JFK airport, you can fly to LAX with airlines 
+                                            such as Alaska Airlines, Delta or American Airlines. Alternatively, suppose you want to fly to Palm 
+                                            Springs, we recommend flying with airlines such as United, from New York La Guardia with a short 
+                                            stopover at Houston Airport, or from New York JFK to American Airlines with a short stopover at 
+                                            Phoenix Airport.</p>
+                                <h3>Flights from Las Vegas</h3>
+                                        <p>You can fly to Palm Springs Airport from Las Vegas McCarran with American Airlines which will 
+                                            feature a stopover at Phoenix. Alternatively, you can fly directly if choosing to fly to LAX, 
+                                            with Alaska, United or Delta.</p>
+                            </div>
+
+                            <div class="thirdPic">
+                                <img src="img/coachella/International Flags.jpg" alt="International Flags Photo">
+                            </div>
+                            
+                            <div class="thirdInfo">
+                                <h3>Flying from an international destination to Coachella</h3>
+                                    <p>Palm Springs International Airport also has limited international destinations. The airline only 
+                                        offers direct services to Canada with the cities of Vancouver, Toronto, Edmonton, Calgary and 
+                                        Winnipeg being served. If travelling from further afield it may be beneficial to connect through 
+                                        one of the major carriers' hub airports, such as with American Airlines and their Dallas hub. 
+                                        However, you also have the option of flying into Los Angeles or San Diego airports, which have a 
+                                        greater level of international routes.</p>
+                                <h3> Flying from the UK & Ireland</h3>
+                                    <p>Flying from London Heathrow, we recommend flying to LAX as this has many more flights arriving from 
+                                        the UK. Airlines that offer non-stop flights include British Airways, Virgin Atlantic, United Airlines, 
+                                        Delta and American Airlines. Alternatively, you could plan a short stop-over in Vancouver, and fly with 
+                                        Air Canada, Westjet or Air Transat for a lower price. To fly to Coachella from Dublin, we again recommend 
+                                        to fly to LAX. Flights here from Dublin are considerably cheaper than flying to the closer Palm Springs. 
+                                        Aer Lingus fly direct from Dublin to LAX, but to make it cheaper, airlines that fly this route with a 
+                                        stopover at London Heathrow include American Airlines. Check out our blog to find out how to plan the 
+                                        perfect stopover.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <!-- FAQ Section -->
+            <section class="FAQ" id="faq">
+                <div class="FAQTitle">
+                    <h1 class="Title">FAQs</h1>
+                    <h3>Have any questions? Read popular answers below.</h3>
+                </div>
+            
+                <!-- Questions and Answers -->
+                <div class="faqQuestions">
+
+                    <!-- First Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: is this website owned by Coachella?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A:No, We are not owned by any company, Tierra Dela Musica is a standalone company that can be hired to feature or 
+                            promote a festival through an interactive website.</p>
+                    </div>    
+
+                    <!-- Second Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: How many passes I can buy?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: Ticket limit is 4 per household. Purchase over 4 admission tickets  will be subject to cancellation 
+                            without notice. </p>
+                    </div>  
+
+                    <!-- Third Question -->
+                    <div class="questions long">
+                        <div class="questionHeader"> 
+                            <h4>Q: Do you promote any other things other than Musical Festival?</h4> 
+                                <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: No , Our company is only dedicated on creating interactive static website for music festivals to be promoted.</p>
+                    </div>
+
+                    <!-- Fourth Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: When is the last date to update my shipping address?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: The last day to update your shipping address is February 2025</p> 
+                    </div>
+                    
+                    <!-- Fifth Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: What's the weekend schedule?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: Schedules are released closer to the event dates</p>
+                    </div>  
+                    
+                    <!-- Sixth Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: What is your refund policy?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: All sales are final</p>
+                    </div>
+
+                    <!-- Seventh Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: Are there extra fees?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: Any taxes abd fees will be reflected  for each item in your total before purchasing.</p>
+                    </div>  
+                    
+                    <!-- Eighth Question -->
+                    <div class="questions">
+                        <div class="questionHeader"> 
+                            <h4>Q: is there a payment plan for tickets?</h4> 
+                            <a onclick="toggleFAQ(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00000">
+                                    <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p>A: Yes, we offer a payment plan option for your order at checkout. Please note all payment in a payment 
+                            plan will incur a flat $52 payment plan fee.</p> 
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="Gallery" id="gallery">
+                <div class="galHeader"><h1 class="Title">Gallery</h1></div>
+                    <div class="infiteGallery">
+
+                        <!-- Gallery Slideshow One -->
+                        <div class="gal1">
+                            <img src="img/Genre1/pic1.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic1">
+                            <img src="img/Genre1/pic2.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic2">
+                            <img src="img/Genre1/pic3.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic3">
+                            <img src="img/Genre1/pic4.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic4">
+                            <img src="img/Genre1/pic5.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic5">
+                            <img src="img/Genre1/pic6.png" alt="Coachella Random Stranger Moment Photo" class="gal1pic pic6">
+                        </div>
+
+                        <!-- Gallery Slideshow Two -->
+                        <div class="gal2">
+                            <img src="img/Genre2/BILLIE EILISH.png" alt="Coachella Random Artist Photo" class="gal2pic gpic1">
+                            <img src="img/Genre2/LANA DEL REY.png" alt="Coachella Random Artist Photo" class="gal2pic gpic2">
+                            <img src="img/Genre2/LE SSERAFIM.png" alt="Coachella Random Artist Photo" class="gal2pic gpic3">
+                            <img src="img/Genre2/NIKI.png" alt="Coachella Random Artist Photo" class="gal2pic gpic4">
+                            <img src="img/Genre2/SABRINA CARPENTER.png" alt="Coachella Random Artist Photo" class="gal2pic gpic5">
+                            <img src="img/Genre2/TAYLOR SWIFT.png" alt="Coachella Random Artist Photo" class="gal2pic gpic6">
+                            <img src="img/Genre2/THE WEEKND.png" alt="Coachella Random Artist Photo" class="gal2pic gpic7">
+                        </div>
+
+                        <!-- Gallery Slideshow Three -->
+                        <div class="gal3">
+                            <img src="img/Genre3/1.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic1">
+                            <img src="img/Genre3/2.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic2">
+                            <img src="img/Genre3/3.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic3">
+                            <img src="img/Genre3/4.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic4">
+                            <img src="img/Genre3/5.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic5">
+                            <img src="img/Genre3/6.png" alt="Coachella Random Tourists Spot Photo" class="gal3pic hpic6">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section -->
+            <footer id="socials">
+                <h1 class="Title">FestVerse</h1>
+
+                <!-- Socials -->
+                <div class="mainContents">
+                    <div class="socialIcons">
+                        <a href="">
+                            <img src="img/icons/facebook (1).png" alt="Facebook Icon">
+                        </a>
+                        <a href="">
+                            <img src="img/icons/twitter (3).png" alt="Twitter Icon">
+                        </a>
+                        <a href=""><img src="img/icons/instagram (3).png" alt="Instagram Icon"></a>
+                        <a href="">
+                            <img src="img/icons/tiktok (1).png" alt="Tikttok Icon">
+                        </a>
+                        <a href="">
+                            <img src="img/icons/youtube.png" alt="Youtube Icon">
+                        </a>
+                        <a href="">
+                            <img src="img/icons/discord.png" alt="Discord Icon">
+                        </a>
+                    </div>
+
+                    <div class="diKoNaAlamAnoName">
+                        <div class="contacts">
+                            <a href="">festVerse@gmail.com</a>
+                            <a href="">Health and Safety</a>
+                            <a href="">Web Accessibility</a>
+                        </div>
+                        <div class="msc">
+                            <a href="">Partners</a>
+                            <a href="">Feedback</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Credits -->
+                <div class="creds">
+                    <div class="pinds"> 
+                        <a href="">Terms</a>
+                        <a href="">Privacy</a>
+                        <a href="">Purchase Agreement</a>
+                    </div>
+                    <h4>&copy; FestVerse. All Rghts Reserved.</h4>
+                </div>
+            </footer>
+        </main>
+    </body>
 </html>
