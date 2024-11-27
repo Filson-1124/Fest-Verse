@@ -1371,7 +1371,7 @@ main{
   }
   .maps {
     width: 100%;
-    padding: 0px;
+    padding-bottom: 7rem;
     margin: 0;
     align-self: start;
     flex-direction: column;
@@ -1434,8 +1434,9 @@ main{
 
   .travelHeaders {
     flex-direction: column;
-    padding-inline: 40px;
+    padding-inline: 20px;
     width: 100%;
+    gap: 20px;
 
     ul {
       text-align: start;
