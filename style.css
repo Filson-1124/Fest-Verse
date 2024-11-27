@@ -1123,6 +1123,17 @@ footer {
 }
 
 @media (max-width: 1447px){
+ 
+.artistCard{
+  width:14rem;
+}
+
+.artistInfo{
+  font-size: .6rem;
+}
+.hitSongs{
+  font-size: .6rem;
+}
   #mainstageIMG,
 #outdoorIMG,
 #gobitentIMG,
@@ -1143,9 +1154,7 @@ footer {
     margin: 0;
     padding: 0;
   }
-  video {
-    display: none;
-  }
+
 
   body {
     width: 344px;
