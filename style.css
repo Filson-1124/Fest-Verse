@@ -1122,8 +1122,24 @@ footer {
   }
 }
 
-@media (max-width: 1447px){
- 
+@media (max-width: 1366px){
+  * {
+  
+    margin: 0;
+    padding: 0;
+  }
+section{
+  width: 100%;
+}
+body{
+  overflow-x: hidden;
+}
+main{
+  width: 100vw;
+}
+.picOfCoach{
+  height:20rem;
+}
 .artistCard{
   width:14rem;
 }
