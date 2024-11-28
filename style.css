@@ -78,7 +78,7 @@ section {
 }
 
 .MobileView-Sidebar {
-  display: block;
+  display: none;
 }
 
 .tix {
@@ -834,6 +834,9 @@ iframe {
   p {
     color: white;
   }
+  h3{
+    text-align:center;
+  }
 }
 
 .thirdInfo {
@@ -848,6 +851,9 @@ iframe {
   text-align: justify;
   p {
     color: white;
+  }
+  h3{
+    text-align:center;
   }
 }
 
@@ -1163,6 +1169,12 @@ main{
   border-radius: 0.625rem;
   box-shadow: 0px 0px 15px 0px #f1f5b8;
 }
+.thirdInfo{
+  h3{
+    font-size: 20px;
+  }
+}
+
 }
 
 @media (max-width: 800px) {
@@ -1491,6 +1503,15 @@ main{
     }
     .secondInfo {
       flex-flow: 4;
+      h3{
+        font-size: 20px;
+      }
+    }
+    .thirdInfo{
+      text-align: start;
+      h3{
+        font-size: 20px;
+      }
     }
 
     .firstInfo,
