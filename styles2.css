@@ -242,6 +242,61 @@ section {
   opacity: 1;
 }
 
+/*profiles Section*/
+.team{
+  background-color: #ffdfd6;
+  color: #553b79;
+  padding-top: 5rem;
+  padding: 20px;
+  h2{
+    margin: 0;
+    padding: 1rem;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+.TeamCardContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 100px 0px ;
+  justify-content: start;
+  gap: 20px;  
+  padding: 20px 30px;
+  overflow-x: auto;
+  
+ 
+}
+.TeamCard{
+  background-color: #73559c;
+  width: 20rem;
+  height: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  font-variant: small-caps;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+  inset -5px -5px 10px rgba(165, 149, 149, 0.1);
+}
+.TeamCard img{
+  height: 15rem;
+  width: 15rem;
+  border-radius: 14px;
+  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.5),
+ -5px -5px 10px rgba(165, 149, 149, 0.1);
+}
+
+.teamInfos p{
+  font-variant: normal;
+  font-size: 12px;
+}
+.teamInfos h5{
+  font-variant: normal;
+  font-weight: lighter;
+}
+
 /* Festivals Section */
 .festivals-section {
   background-color: #ffdfd6;
@@ -455,6 +510,25 @@ footer p {
   .slider-wrapper {
     max-width: 100%;
   }
+ .team{
+  padding-right: 10px;
+  justify-content: center;
+  h2{
+    font-size: 2.5rem;
+  }
+ 
+ }
+ .TeamCardContainer{
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: start;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+ }
+ .TeamCard{
+  width: 100%;
+  scroll-snap-align: center;
+ }
 
   #festivals {
     height: max-content;
@@ -632,6 +706,7 @@ footer p {
   .slider-wrapper {
     max-width: 100%;
   }
+  
 
   #festivals {
     height: max-content;
@@ -684,5 +759,11 @@ footer p {
 
   footer p {
     font-size: 0.7rem;
+  }
+}
+
+@keyframes slidetoright {
+  to {
+    right: -300px;
   }
 }
