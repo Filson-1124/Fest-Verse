@@ -241,8 +241,12 @@ section {
 .slider-nav a:hover {
   opacity: 1;
 }
+.hint{
+  display: none;
+}
 
 /*profiles Section*/
+
 .team{
   background-color: #ffdfd6;
   color: #553b79;
@@ -518,6 +522,19 @@ footer p {
   }
  
  }
+ .hint{
+  display: block;
+  background-color: #b8a1d8;
+  padding: 10px;
+  border-radius: 40px;
+ }
+ .swipe{
+  fill:#553b79;
+  animation-name:  slideleftandright;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+ }
  .TeamCardContainer{
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -762,8 +779,31 @@ footer p {
   }
 }
 
-@keyframes slidetoright {
-  to {
-    right: -300px;
+
+@keyframes slideleftandright{
+  1%{
+    transform: translateX(0);
+   
+  }10%{
+    transform: scale(.8);
+  }
+  25%{
+    transform: translateX(-100px);
+  }
+  40%{
+    transform: scale(1);
+  }
+  50%{
+    transform: translateX(0);
+   
+  }60%{
+    transform: scale(.8);
+  }
+  75%{
+    transform: translateX(100px);
+    
+  }100%{
+    transform: translateX(0);
+    
   }
 }
