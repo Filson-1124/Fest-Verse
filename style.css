@@ -380,6 +380,9 @@ main p {
     color: #010007;
   }
 }
+.hint{
+display: none;  
+}
 
 .artists {
   background-image: url(img/backgrounds/3.png);
@@ -1307,6 +1310,22 @@ main{
       }
     }
   }
+  .hint{
+    display: block;
+    background-color: rgb(208, 211, 255);
+    padding: 10px;
+    border-radius: 40px;
+    width: 100%;
+   }
+   
+   .swipe{
+    fill:#553b79;
+    animation-name:  slideleftandright;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+   }
+ 
   .artists {
     padding: 40px;
     padding-left: 48px;
@@ -1664,5 +1683,32 @@ main{
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes slideleftandright{
+  1%{
+    transform: translateX(0);
+   
+  }10%{
+    transform: scale(.8);
+  }
+  25%{
+    transform: translateX(-100px);
+  }
+  40%{
+    transform: scale(1);
+  }
+  50%{
+    transform: translateX(0);
+   
+  }60%{
+    transform: scale(.8);
+  }
+  75%{
+    transform: translateX(100px);
+    
+  }100%{
+    transform: translateX(0);
+    
   }
 }
