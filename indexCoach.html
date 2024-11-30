@@ -14,9 +14,7 @@
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="index.js" defer></script>
 
-        <!--Icon-->
-        <link rel="icon" href="img/fvpics/festverselogo.png" type="image/png">
-        <title>Coachella 2025</title>
+        <title>Coachella</title>
     </head>
     <body>
         <!-- Sidebar Navigation -->
@@ -79,6 +77,15 @@
                 </li>
 
                 <li class="link">
+                    <a href="#merch">  
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/>
+                        </svg>           
+                        <span>Merchandise</span>
+                    </a>              
+                </li>
+
+                <li class="link">
                     <a href="#travelguide">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                             <path d="M294.23-100v-80.77l116.92-82.08v-158.61L100-296.54v-99.23l311.15-218.61v-176.77q0-28.39 20.24-48.62Q451.62-860 480-860t48.61 20.23q20.24 20.23 20.24 48.62v176.77L860-395.77v99.23L548.85-421.46v158.61l116.53 82.08V-100L480-156.16 294.23-100Z"/>
@@ -114,14 +121,7 @@
                     </a>
                 </li>
 
-                <li class="link">
-                    <a href="https://coachellamerch.shop" target="_blank">  
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                            <path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/>
-                        </svg>           
-                        <span>Store</span>
-                    </a>              
-                </li>
+                
 
             </ul>
             <div class="tix">
@@ -573,6 +573,39 @@
                 </section>
             </section>
 
+            <!--Merh Section-->
+            <section class="Merch" id="merch">
+                <h1 class="Title">Merchandise</h1>
+                
+                <div class="merchContent">
+                    <div class="merchCard">
+                        <div class="product Tee">
+                        </div>
+                        <h4>Tee-Shirt</h4>
+                    </div>
+
+                    <div class="merchCard">
+                        <div class="product phoneCase">
+                        </div>
+                        <h4>Phone Case</h4>
+                    </div>
+                    <div class="merchCard">
+                        <div class="product pillow">
+                        </div>
+                        <h4>Pillows</h4>
+                    </div>
+                    <div class="merchCard">
+                        <div class="product hoodie">
+                        </div>
+                        <h4>Hoodies</h4>
+                    </div>
+                </div>
+                <div class="hint">
+                    <svg class="swipe" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"/></svg>
+                </div>
+                <button onclick="openCoachellaMerch()">Shop for more</button>
+            </section>
+
             <!-- Travel Guide Section -->
             <section class="travelguide" id="travelguide">
                 <h1 class="Title">How to go to Coachella? </h1>
@@ -608,8 +641,8 @@
                                 <img src="img/coachella/Poppy Palm Springs Vacation Rentals - Stay Connected With Us @staypoppy.jpg" 
                                 alt="Poppy Palm Springs Vacation Rentals Photo">
                             </div>
-                                
-                                   <div class="firstInfo">
+                   
+                                <div class="firstInfo">
                                     <h3>Details on how to get to Empire Polo Club in Indigo:</h3>
                                     <p>
                                      If you have already booked tickets to the Coachella festival and you need to organize how to get to 
@@ -625,7 +658,6 @@
                                     get to Coachella, and which airlines to fly with.
                                 </p>
                                 </div>
-                                
                                 
                 
                             <div class="secondPic">
@@ -843,20 +875,20 @@
                 <!-- Socials -->
                 <div class="mainContents">
                     <div class="socialIcons">
-                        <a href="https://www.facebook.com/filsonjuan/">
+                        <a href="">
                             <img src="img/icons/facebook (1).png" alt="Facebook Icon">
                         </a>
-                        <a href="https://x.com/bqubl">
+                        <a href="">
                             <img src="img/icons/twitter (3).png" alt="Twitter Icon">
                         </a>
-                        <a href="https://www.instagram.com/filsonjuan/"><img src="img/icons/instagram (3).png" alt="Instagram Icon"></a>
-                        <a href="https://www.tiktok.com/@fjlbtv?_t=8roeVCggZb3&_r=1">
+                        <a href=""><img src="img/icons/instagram (3).png" alt="Instagram Icon"></a>
+                        <a href="">
                             <img src="img/icons/tiktok (1).png" alt="Tikttok Icon">
                         </a>
-                        <a href="https://www.youtube.com/@fjlbtv8153">
+                        <a href="">
                             <img src="img/icons/youtube.png" alt="Youtube Icon">
                         </a>
-                        <a href="#">
+                        <a href="">
                             <img src="img/icons/discord.png" alt="Discord Icon">
                         </a>
                     </div>
