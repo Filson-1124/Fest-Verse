@@ -1589,6 +1589,9 @@ main{
   #merch button, #merch .hint{
     width: 90%;
   }
+   #merch .hint{
+   background-color: #d2bcf191;
+  }
 
   .merchContent {
     display: flex;
