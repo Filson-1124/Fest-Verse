@@ -681,6 +681,113 @@ dialog {
 }
 /* end maps design */
 
+#merch{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffde7c;
+}
+
+#merch button{
+  width: 30%;
+  height: 50px;
+  border-radius: 40px;
+  background-color: rgb(169, 241, 169);
+  border: none;
+  font-size: 20px;
+  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.5),
+   -5px -5px 10px rgba(165, 149, 149, 0.1);
+   font-family: "Potta One", system-ui;
+  font-weight: 500;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(2, 2, 17, 0.6);
+  transition: all 500ms ease;
+}
+
+#merch button:active{
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+  inset -5px -5px 10px rgba(165, 149, 149, 0.1);
+}
+#merch button:hover{
+  transform: scale(1.1);
+}
+.merchContent{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.merchCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 20px;
+  justify-content: center;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 20px;
+  background-color: rgb(247, 190, 133);
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+  inset -5px -5px 10px rgba(165, 149, 149, 0.1);
+  transition: all 1s ease;
+}
+
+.merchCard h4{
+  font-family: "Potta One", system-ui;
+  font-weight: 500;
+  text-shadow: 0px 0px 10px rgba(2, 2, 17, 0.6);
+}
+.product{
+  
+  height: 90%;
+  width: 90%;
+  background-size: cover;
+  border-radius: 14px;
+  transition: all 1s ease;
+  box-shadow:5px 5px 10px rgba(0, 0, 0, 0.5),
+  -5px -5px 10px rgba(165, 149, 149, 0.1);
+}
+
+.merchCard:hover{
+  transform: scale(1.1);
+}
+.Tee{
+  background-image: url(img/products/prod1.jpg);
+}
+.TeeMale{
+  background-image: url(img/products/prod2.jpg);
+}
+.pillow{
+  background-image: url(img/products/prod4ril.jpg);
+}
+.hoodie{
+  background-image: url(img/products/prod5.jpg);
+}
+.phoneCase{
+  background-image: url(img/products/prod3.jpg);
+}
+.Tee:hover{
+  background-image: url(img/products/prod1alt.jpg);
+}
+.hoodie:hover{
+  background-image: url(img/products/prod5alt.jpg);
+}
+.pillow:hover{
+  background-image: url(img/products/prod4alt.jpg);
+}
+.phoneCase:hover{
+  background-image: url(img/products/prod3alt.jpg);
+}
+
+
+
 .travelguide {
   background-image: url(img/backgrounds/5.png);
   background-repeat: no-repeat;
@@ -1476,7 +1583,42 @@ main{
     justify-content: start;
     text-align: center;
   }
+  #merch{
+    padding: 10px;
+  }
+  #merch button, #merch .hint{
+    width: 90%;
+  }
 
+  .merchContent {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-width: 100%;
+    height: 50%;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: inline mandatory;
+    overflow-x: auto;
+    > .merchCard {
+      flex-shrink: 0;
+      min-width: 300px;
+      min-height: 310px;
+      margin: 0;
+      > p {
+        font-size: 0.5rem;
+      }
+    }
+  }
+
+  .merchContent > * {
+    scroll-snap-align: center;
+  }
+  .merchCard{
+    width: 20rem;
+  }
 
   .travelHeaders {
     flex-direction: column;
