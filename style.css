@@ -1069,7 +1069,7 @@ footer {
   display: flex;
   flex-direction: column;
 
-  gap: 30px;
+  gap: 10px;
   padding: 50px;
 
   width: 100%;
@@ -1080,21 +1080,26 @@ footer {
     padding-left: 40px;
   }
   a {
-    font-size: 15px;
+    font-size: 12px;
     text-decoration: none;
     color: white;
     text-align: left;
   }
 }
-
+#socials{
+  padding: 10px 40px 0px;
+  >.Title{
+    font-size: 40px;
+  }
+}
 .socialIcons {
   padding-left: 40px;
   display: flex;
   gap: 20px;
   a {
     img {
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
       flex-grow: 0;
     }
   }
@@ -1110,7 +1115,7 @@ footer {
 .contacts {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   width: 40%;
   height: 100px;
 }
@@ -1612,12 +1617,17 @@ main{
   }
 
   footer {
-    padding-top: 0px;
-    padding-left: 0px;
     flex-direction: column;
     a {
       font-size: 12px;
     }
+  }
+  #socials{
+    padding: 0px;
+    padding-bottom: 50px;
+  }
+  .msc{
+    gap: 6px;
   }
   .mainContents {
     width: 100%;
