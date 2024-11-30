@@ -1278,6 +1278,7 @@ main{
     }
   }
   .heropage {
+    background-image: url(img/backgrounds/finalMobileHomeScreen.jpg);
     width: 100vw;
     height: 100vh;
     margin-bottom: 0px;
