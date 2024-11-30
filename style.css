@@ -718,6 +718,7 @@ dialog {
     > h4 {
       font-size: 2rem;
       margin-bottom: 30px;
+      color:  rgb(51, 60, 185);
     }
   }
 }
@@ -1201,11 +1202,12 @@ main{
 
 
   body {
-    width: 344px;
+    width: auto;
     height: auto;
     display: grid;
     grid-template-rows: 1fr 40px;
     gap: 0px;
+    padding: 0px;
   }
   nav {
     grid-row: 2/3;
@@ -1487,6 +1489,7 @@ main{
       width: 100%;
       h4 {
         font-size: 1.5rem;
+        
       }
       li {
         span {
@@ -1633,6 +1636,8 @@ main{
   #socials{
     padding: 0px;
     padding-bottom: 50px;
+    margin-bottom: 0px;
+    height: auto
   }
   .msc{
     gap: 6px;
@@ -1660,6 +1665,13 @@ main{
 
   .creds {
     flex-direction: column;
+    padding-left: 0px;
+      h4{
+        align-self: center;
+      }
+  }
+  .pinds{
+    padding-left: 20px;
   }
 }
 
