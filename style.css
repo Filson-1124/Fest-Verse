@@ -693,11 +693,15 @@ dialog {
   background-color: #ffde7c;
 }
 
+#merch .Title{
+  color: #553b79;
+}
+
 #merch button{
   width: 30%;
   height: 50px;
   border-radius: 40px;
-  background-color: rgb(169, 241, 169);
+  background-color:  #CB9DF0;
   border: none;
   font-size: 20px;
   box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.5),
