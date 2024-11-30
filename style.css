@@ -783,7 +783,10 @@ iframe {
   color: white;
   border-radius: 20px;
   text-align: justify;
-   h3{
+    p {
+    color: white;
+  }
+  h3{
     text-align:center;
   }
 }
