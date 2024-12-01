@@ -690,7 +690,7 @@ dialog {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #ffde7c;
+  background-image: url(img/backgrounds/newBG.jpg);
 }
 
 #merch .Title{
