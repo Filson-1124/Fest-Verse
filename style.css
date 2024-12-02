@@ -387,7 +387,7 @@ display: none;
 
 .artists {
   background-image: url(img/backgrounds/3.png);
-  background-size: cover;
+  background-size: 100% 100%;
   width: 100vw;
   display: flex;
   flex-wrap: no-wrap;
@@ -577,7 +577,9 @@ dialog {
 
 .mapOfCoachella {
   background-image: url(img/backgrounds/4.png);
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   margin: 0;
 }
@@ -690,7 +692,12 @@ dialog {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-image: url(img/backgrounds/newBG.jpg);
+  background-image: url(img/backgrounds/newBG3.jpg);
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
 }
 
 #merch .Title{
@@ -1070,9 +1077,11 @@ iframe {
   gap: 30px;
   padding-top: 2rem;
   padding: 2rem;
-  width: 100vw;
+ 
 }
-
+#gallery{
+  width: 100%;
+}
 .infiniteGallery {
   display: flex;
   gap: 50px;
@@ -1087,7 +1096,7 @@ iframe {
   height: 200px;
   width: 100%;
 
-  max-width: 1536px;
+  max-width: 100%;
 
   padding: 10px;
   display: flex;
@@ -1590,11 +1599,12 @@ main{
   #merch{
     padding: 10px;
   }
+
+  #merch .hint{
+   background-color: #d2bcf191;
+  }
   #merch button, #merch .hint{
     width: 90%;
-  }
-   #merch .hint{
-   background-color: #d2bcf191;
   }
 
   .merchContent {
@@ -1757,7 +1767,7 @@ main{
     align-self: center;
     justify-self: start;
     height: 500px;
-    width: 100vw;
+    width: 100%;
     padding-top: 20px;
     margin: 0;
     mask-image: linear-gradient(
