@@ -50,7 +50,7 @@ function openCoachellaPasses() {
     window.open("https://www.coachella.com/passes", '_blank');
 }
 function openCoachellaMerch() {
-  window.open("https://coachellamerch.shop/s", "_blank");
+  window.open("https://coachellamerch.shop", "_blank");
 }
 function showMap(mapId) {
     const maps = document.querySelectorAll('.map');
