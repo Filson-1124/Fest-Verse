@@ -178,7 +178,7 @@ main p {
 .heropage {
   background-image: url(img/backgrounds/Home.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   height: 100vh;
   width: 100vw;
@@ -317,7 +317,7 @@ main p {
 #about {
   background-image: url(img/backgrounds/2.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   width: 100vw;
   height: auto;
   padding-bottom: 30px;
@@ -1401,6 +1401,7 @@ main{
   }
   .heropage {
     background-image: url(img/backgrounds/finalMobileHomeScreen.jpg);
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     margin-bottom: 0px;
@@ -1425,6 +1426,8 @@ main{
 
   #about {
     padding: 0px;
+    background-size: cover;
+    background-position: center;
   }
 
   .about {
@@ -1465,6 +1468,8 @@ main{
     padding: 40px;
     padding-left: 48px;
     margin-top: 0px;
+    background-size: cover;
+    background-position: center;
   }
   .Coc,
   .artistsContainer {
@@ -1542,6 +1547,11 @@ main{
     align-self: start;
     flex-direction: column;
     align-items: center;
+
+  }
+  .mapOfCoachella{
+    background-size: cover;
+    background-position: center;
   }
   .map-btn {
     width: 250px;
@@ -1598,6 +1608,8 @@ main{
   }
   #merch{
     padding: 10px;
+    background-size: cover;
+    background-position: right;
   }
 
   #merch .hint{
@@ -1636,7 +1648,10 @@ main{
   .merchCard{
     width: 20rem;
   }
-
+.travelguide{
+  background-size: cover;
+  background-position: center;
+}
   .travelHeaders {
     flex-direction: column;
     padding-inline: 20px;
@@ -1717,6 +1732,8 @@ main{
   }
 
   .FAQ {
+    background-size: cover;
+    background-position: left;
     align-self: flex-start;
     margin: 0;
     min-height: 100vh;
@@ -1752,6 +1769,8 @@ main{
   }
 
   .Gallery {
+    background-size: cover;
+    background-position: center;
     padding: 0px;
   }
   .galHeader {
@@ -1774,7 +1793,7 @@ main{
       to right,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1) 10%,
-      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 1) 90%,
       rgba(0, 0, 0, 0)
     );
   }
