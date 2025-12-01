@@ -417,7 +417,8 @@ display: none;
 }
 
 .artistsContainer {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   grid-template-rows: repeat(auto-fit, auto);
   gap: 20px;
