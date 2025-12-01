@@ -7,55 +7,103 @@ if (isset($_POST['add'])) {
     $desc = $_POST['description'];
     $hits = $_POST['hit_songs'];
 
+    // Handle image upload
     $img = "uploads/" . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $img);
 
-    $conn->query("INSERT INTO artists (name, description, hit_songs, image_path)
-                  VALUES ('$name', '$desc', '$hits', '$img')");
-}
+    // Use prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $name, $desc, $hits, $img);
 
-// Handle Delete
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-    $conn->query("DELETE FROM artists WHERE id=$id");
+    if ($stmt->execute()) {
+        // Refresh the page
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    } else {
+        echo "Failed to add artist: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Manage Artists</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
 
-<h2>Manage Artists</h2>
+<button onclick="window.location.href ='index.php'"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium">
+        Back
+</button>
 
-<form method="POST" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="Artist Name" required><br>
-    <textarea name="description" placeholder="Description" required></textarea><br>
-    <input type="text" name="hit_songs" placeholder="Hit Songs" required><br>
-    <input type="file" name="image" required><br><br>
-    <button type="submit" name="add">Add Artist</button>
-</form>
+<h2 class="text-3xl font-bold mb-6 text-gray-800">Manage Artists</h2>
 
-<hr>
+<!-- ADD ARTIST CARD -->
+<div class="max-w-xl bg-white p-6 rounded-xl shadow mb-10">
+    <h3 class="text-xl font-semibold mb-4 text-gray-700">Add New Artist</h3>
 
-<h3>Existing Artists</h3>
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+        <input type="text" name="name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+            placeholder="Artist Name" required>
 
-<table border="1" width="100%">
-    <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Hit Songs</th>
-        <th>Actions</th>
-    </tr>
+        <textarea name="description"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+            placeholder="Description" rows="3" required></textarea>
 
-<?php
-$result = $conn->query("SELECT * FROM artists");
-while ($row = $result->fetch_assoc()):
-?>
-    <tr>
-        <td><img src="<?= $row['image_path'] ?>" width="80"></td>
-        <td><?= $row['name'] ?></td>
-        <td><?= $row['hit_songs'] ?></td>
-        <td>
-            <a href="edit_artist.php?id=<?= $row['id'] ?>">Edit</a> |
-            <a href="admin_artist.php?delete=<?= $row['id'] ?>" onclick="return confirm('Delete this artist?')">Delete</a>
-        </td>
-    </tr>
-<?php endwhile; ?>
+        <input type="text" name="hit_songs"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+            placeholder="Hit Songs (comma separated)" required>
 
+        <input type="file" name="image"
+            class="w-full border border-gray-300 rounded-lg p-2" required>
+
+        <button type="submit" name="add"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium">
+            Add Artist
+        </button>
+    </form>
+</div>
+
+
+<h3 class="text-2xl font-semibold mb-3 text-gray-800">Existing Artists</h3>
+
+<div class="overflow-x-auto bg-white rounded-xl shadow">
+<table class="w-full text-left">
+    <thead>
+        <tr class="bg-blue-600 text-white">
+            <th class="p-3">Image</th>
+            <th class="p-3">Name</th>
+            <th class="p-3">Hit Songs</th>
+            <th class="p-3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    $result = $conn->query("SELECT * FROM artists");
+    while ($row = $result->fetch_assoc()):
+    ?>
+        <tr class="border-b hover:bg-gray-50">
+            <td class="p-3">
+                <img src="<?= htmlspecialchars($row['image_path']) ?>" class="w-16 h-16 object-cover rounded">
+            </td>
+            <td class="p-3"><?= htmlspecialchars($row['name']) ?></td>
+            <td class="p-3"><?= htmlspecialchars($row['hit_songs']) ?></td>
+            <td class="p-3">
+                <a href="edit_artist.php?id=<?= $row['id'] ?>"
+                   class="text-blue-600 font-medium hover:underline mr-3">Edit</a>
+                <a href="delete_artist.php?id=<?= $row['id'] ?>"
+                   class="text-red-600 font-medium hover:underline"
+                   onclick="return confirm('Are you sure you want to delete this artist?')">Delete</a>
+            </td>
+        </tr>
+    <?php endwhile; ?>
+    </tbody>
 </table>
+</div>
+</body>
+</html>

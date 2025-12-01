@@ -24,14 +24,70 @@ if (isset($_POST['update'])) {
                   $updateImg WHERE id=$id");
 
     header("Location: admin_artist.php");
+    exit();
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Artist</title>
 
-<form method="POST" enctype="multipart/form-data">
-    <input type="text" name="name" value="<?= $artist['name'] ?>" required><br>
-    <textarea name="description" required><?= $artist['description'] ?></textarea><br>
-    <input type="text" name="hit_songs" value="<?= $artist['hit_songs'] ?>" required><br>
-    <input type="file" name="image"><br><br>
+<!-- ⭐ Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <button name="update">Update</button>
-</form>
+</head>
+<body class="bg-gray-100 p-10">
+
+<div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow">
+    
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Edit Artist</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+
+        <div>
+            <label class="font-medium text-gray-700">Artist Name</label>
+            <input type="text" name="name"
+                value="<?= $artist['name'] ?>"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                required>
+        </div>
+
+        <div>
+            <label class="font-medium text-gray-700">Description</label>
+            <textarea name="description" rows="3"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                required><?= $artist['description'] ?></textarea>
+        </div>
+
+        <div>
+            <label class="font-medium text-gray-700">Hit Songs</label>
+            <input type="text" name="hit_songs"
+                value="<?= $artist['hit_songs'] ?>"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                required>
+        </div>
+
+        <div>
+            <label class="font-medium text-gray-700">Replace Image (optional)</label>
+            <input type="file" name="image"
+                class="w-full border border-gray-300 rounded-lg p-2">
+        </div>
+
+        <div class="mt-4">
+            <button name="update"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium">
+                Update Artist
+            </button>
+
+            <a href="admin_artist.php"
+               class="ml-3 text-gray-600 hover:text-gray-800 font-medium">
+                Cancel
+            </a>
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

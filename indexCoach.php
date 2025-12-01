@@ -23,7 +23,7 @@
         <nav id="sidebar">
             <ul>
                 <li class="DesktopView-Sidebar">
-                    <a href="index.html" >
+                    <a href="index.php" >
                         <span class="logo">FestVerse</span>
                     </a>
                     <button id="toggle-button" onclick=toggleSideBar()>
