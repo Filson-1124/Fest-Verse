@@ -7,11 +7,18 @@ if (isset($_POST['add'])) {
     $desc = $_POST['description'];
     $hits = $_POST['hit_songs'];
 
-    $img = "uploads/" . basename($_FILES["image"]["name"]);
+    $img_name = basename($_FILES["image"]["name"]);
+    $img = "uploads/" . $img_name;
     move_uploaded_file($_FILES["image"]["tmp_name"], $img);
 
-    $conn->query("INSERT INTO artists (name, description, hit_songs, image_path)
-                  VALUES ('$name', '$desc', '$hits', '$img')");
+    $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
+    
+    $stmt->bind_param("ssss", $name, $desc, $hits, $img);
+
+    $stmt->execute();
+    
+    $stmt->close();
+    header("Location: admin_artist.php");
 }
 
 // Handle Delete
