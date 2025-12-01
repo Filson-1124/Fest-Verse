@@ -8,9 +8,26 @@ if (isset($_POST['add'])) {
     $hits = $_POST['hit_songs'];
 
     // Handle image upload
-    $img = "uploads/" . basename($_FILES["image"]["name"]);
+    $img_name = basename($_FILES["image"]["name"]);
+    $img = "uploads/" . $img_name;
     move_uploaded_file($_FILES["image"]["tmp_name"], $img);
 
+    $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
+    
+    $stmt->bind_param("ssss", $name, $desc, $hits, $img);
+
+    $stmt->execute();
+    
+    $stmt->close();
+    header("Location: admin_artist.php");
+}
+
+// Handle Delete
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $conn->query("DELETE FROM artists WHERE id=$id");
+}
+?>
     // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $name, $desc, $hits, $img);

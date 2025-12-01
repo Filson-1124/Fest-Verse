@@ -798,7 +798,192 @@ dialog {
   background-image: url(img/products/prod3alt.jpg);
 }
 
+/* MARIANNE ADDED */
+/* weather section */
+.weatherSection {
+  background-image: url(img/backgrounds/8.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.weatherCtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-title{
+  font-size: 60px;
+  font-variant: small-caps;
+  color: rgba(118, 165, 245, 0.772);
+}
+.loc{
+  margin: 2rem 1rem 1rem 1rem;
+  color: #553b79;
+}
+
+.subtext{
+  color: #634988;
+}
+
+/* Grid layout */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    width: 90%;
+}
+
+/* Card design */
+.day-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(103, 111, 192, 0.849);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 2px solid #da9e65;
+    min-width: 200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 5px;
+    /* background-color: red; */
+}
+
+.top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    overflow: hidden;
+    /* background-color: blue; */
+}
+
+.top-left .max-temp {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.top-left h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.weather-icon {
+    flex-shrink: 0;
+    width: 35px;
+    text-align: right;
+    font-size: 2.3rem;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.icon-text .material-icons {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+/* Hover animation */
+.day-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.max-temp {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.sep {
+    font-size: 1rem;
+    color: #d8d8d8;
+}
+
+.min-temp {
+    font-size: 1rem;
+    color: #f5f5f5;
+}
+
+/* Date */
+.day-card h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Temperature text */
+.day-card p {
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+/* Floating current weather card */
+.current-card {
+    position: fixed; 
+    top: 20px;           
+    right: 20px;           
+    width: 180px;          
+    padding: 12px;
+    background: rgba(103, 110, 192, 0.692);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 2px solid #da9e65;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 9999;         
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* Top row for title + icon */
+.current-card .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icon size smaller */
+.current-card .weather-icon {
+    font-size: 1.5rem;
+}
+
+/* Current weather lines */
+.current-card p {
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+}
+/* MARIANNE END */
 
 .travelguide {
   background-image: url(img/backgrounds/5.png);
@@ -1312,6 +1497,44 @@ main{
   }
 }
 
+.forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    width: 95%;
+  }
+
+  .day-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .top-left h3,
+  .top-left .max-temp {
+    font-size: 0.9rem;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+  .icon-text {
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+  
+  .top-row {
+    gap: 10px;
+  }
+
+  .top-left h3 {
+    font-size: 0.9rem;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+
 }
 
 @media (max-width: 800px) {
@@ -1399,6 +1622,71 @@ main{
         display: none;
       }
     }
+
+    .forecast-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .day-card {
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    /* Top row spacing */
+    .top-row {
+      gap: 12px;
+    }
+
+    .top-left h3 {
+      font-size: 0.85rem;
+    }
+
+    .max-temp,
+    .min-temp {
+      font-size: 0.75rem;
+    }
+
+    .weather-icon {
+      font-size: 1.8rem;
+      margin-left: 8px;
+    }
+    .current-card {
+    position: fixed; 
+    top: 20px;           
+    right: 20px;           
+    padding: 10px 20px;
+    background: rgba(103, 110, 192, 0.692);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 2px solid #da9e65;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 9999;         
+    font-size: 0.8rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+    .current-card .temp-icon {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .temp-icon .current-temp {
+        font-weight: bold;
+    }
+
+    .temp-icon .weather-icon {
+        font-size: 1.2rem;
+    }
+
+    .current-card .extra-info {
+        display: none;
+}
+
   }
   .heropage {
     background-image: url(img/backgrounds/finalMobileHomeScreen.jpg);
