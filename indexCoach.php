@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+        
 
         <!-- Styles and Scripts -->
         <link rel="stylesheet" href="style.css">
@@ -16,6 +17,8 @@
             
         <!--Icon-->
          <link rel="icon" href="img/CoachellaIcon.png" type="image/png">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Coachella 2025</title>
     </head>
     <body>
@@ -171,33 +174,33 @@
             
             <!-- Artist Section -->
            <?php
-include 'db.php'; // DB connection
+            include 'db.php'; // DB connection
 
-$query = $conn->query("SELECT * FROM artists ORDER BY id ASC");
-?>
+            $query = $conn->query("SELECT * FROM artists ORDER BY id ASC");
+            ?>
 
-<section class="artists" id="artists">
-    <h1 class="Title">Artists</h1>
-    <div class="Coc">
-        <div class="artistsContainer">
+            <section class="artists" id="artists">
+                <h1 class="Title">Artists</h1>
+                <div class="Coc">
+                    <div class="artistsContainer">
 
-        <?php while ($row = $query->fetch_assoc()): ?>
-            <div class="artistCard">
-                <img src="<?= $row['image_path'] ?>" class="artistPic">
-                <h3><?= $row['name'] ?></h3>
+                    <?php while ($row = $query->fetch_assoc()): ?>
+                        <div class="artistCard">
+                            <img src="<?= $row['image_path'] ?>" class="artistPic">
+                            <h3><?= $row['name'] ?></h3>
 
-                <a onclick="toggleCard(this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-                </a>
+                            <a onclick="toggleCard(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+                            </a>
 
-                <p class="artistInfo"><?= $row['description'] ?></p>
-                <p class="hitSongs"><span>Hit Songs</span>: <?= $row['hit_songs'] ?></p>
-            </div>
-        <?php endwhile; ?>
+                            <p class="artistInfo"><?= $row['description'] ?></p>
+                            <p class="hitSongs"><span>Hit Songs</span>: <?= $row['hit_songs'] ?></p>
+                        </div>
+                    <?php endwhile; ?>
 
-        </div>
-    </div>
-</section>
+                    </div>
+                </div>
+            </section>
 
 
             <!-- Map Section -->
@@ -268,6 +271,17 @@ $query = $conn->query("SELECT * FROM artists ORDER BY id ASC");
                     <svg class="swipe" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M419-80q-28 0-52.5-12T325-126L107-403l19-20q20-21 48-25t52 11l74 45v-328q0-17 11.5-28.5T340-760q17 0 29 11.5t12 28.5v472l-97-60 104 133q6 7 14 11t17 4h221q33 0 56.5-23.5T720-240v-160q0-17-11.5-28.5T680-440H461v-80h219q50 0 85 35t35 85v160q0 66-47 113T640-80H419ZM167-620q-13-22-20-47.5t-7-52.5q0-83 58.5-141.5T340-920q83 0 141.5 58.5T540-720q0 27-7 52.5T513-620l-69-40q8-14 12-28.5t4-31.5q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 17 4 31.5t12 28.5l-69 40Zm335 280Z"/></svg>
                 </div>
                 <button onclick="openCoachellaMerch()">Shop for more</button>
+            </section>
+
+            <!-- WEATHER SECTION -->
+            <section>
+                <div class="weatherCtn">
+                    <h2 class="weather-title">Weather Forecast</h2>
+                    <h2 class="loc">Cochella, Empire Polo Club Indio, California</h2>
+                    <p>The weather forecast data is from Open Meteo API.</p>
+                    <div id="forecast" class="forecast-grid"></div>
+                    <div id="current-weather"></div>
+                </div>
             </section>
 
             <!-- Travel Guide Section -->
@@ -582,5 +596,117 @@ $query = $conn->query("SELECT * FROM artists ORDER BY id ASC");
                 </div>
             </footer>
         </main>
+
+        <script>
+            const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=33.6803&longitude=-116.1739&daily=uv_index_max,weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,relative_humidity_2m,rain,visibility,showers,dew_point_2m&current=weather_code,temperature_2m,relative_humidity_2m,precipitation,is_day,wind_speed_10m,wind_direction_10m,rain&timezone=auto';
+
+            const weatherIcons = {
+                0: "☀️",
+                1: "🌤️",
+                2: "⛅",
+                3: "☁️",
+                45: "🌫️",
+                48: "🌫️",
+                51: "🌦️",
+                53: "🌦️",
+                55: "🌧️",
+                61: "🌧️",
+                63: "🌧️",
+                65: "🌧️",
+                71: "❄️",
+                73: "❄️",
+                75: "❄️",
+                80: "🌧️",
+                81: "🌧️",
+                82: "🌧️",
+                95: "⛈️",
+                96: "⛈️",
+                99: "⛈️"
+            };
+
+            async function getWeather() {
+                try {
+                    const res = await fetch(apiUrl);
+                    const data = await res.json();
+
+                    console.log(data);
+
+                    displayDaily(data.daily, data.current);
+                    displayCurrent(data.current);
+                } catch (error) {
+                    console.error("Weather API failed:", error);
+                }
+            }
+
+            getWeather();
+
+            function formatDate(dateStr) {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                });
+            }
+
+            function formatTime(dateStr) {
+                const date = new Date(dateStr);
+                return date.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    hour12: true
+                });
+            }
+
+            function displayDaily(daily) {
+                const container = document.getElementById("forecast");
+                container.innerHTML = "";
+
+                daily.time.forEach((date, index) => {
+                    const max = daily.temperature_2m_max[index];
+                    const min = daily.temperature_2m_min[index];
+                    const uv = daily.uv_index_max[index];
+                    const sunrise = daily.sunrise[index];
+                    const sunset = daily.sunset[index];
+                    const code = daily.weather_code[index];
+
+                    container.innerHTML += `
+                        <div class="day-card">
+                            <div class="top-row">
+                                <div class="top-left">
+                                    <h3>${formatDate(date)}</h3>
+                                    <p class="max-temp">
+                                        <i class="fas fa-temperature-high"></i> ${max}°C 
+                                        <span class="sep">|</span> 
+                                        <span class="min-temp"><i class="fas fa-temperature-low"></i> ${min}°C</span>
+                                    </p>
+                                </div>
+                                <div class="weather-icon">${weatherIcons[code] || "❓"}</div>
+                            </div>
+                            <p class="icon-text"><i class="fas fa-sun"></i> UV Index: ${uv}</p>
+                            <p class="icon-text"><span class="material-icons">wb_sunny</span> Sunrise: ${formatTime(sunrise)}</p>
+                            <p class="icon-text"><span class="material-icons">nights_stay</span> Sunset: ${formatTime(sunset)}</p>
+                        </div>
+                        `;
+                });
+            }
+
+            function displayCurrent(current) {
+                const ctn = document.getElementById("current-weather");
+
+                ctn.innerHTML = `
+                    <div class="day-card current-card">
+                        <div class="top-row">
+                            <p class="current-temp"><i class="fas fa-temperature-high"></i> ${current.temperature_2m}°C</p>
+                            <div class="weather-icon">${weatherIcons[current.weather_code] || "❓"}</div>
+                        </div>
+                        <p><i class="fas fa-tint"></i> ${current.relative_humidity_2m}% <span>|</span> <span><i class="fas fa-cloud-showers-heavy"></i> ${current.rain}</span> </p>
+                        <p><i class="fas fa-wind"></i> ${current.wind_speed_10m} km/h <span>|</span> <span><i class="fas fa-location-arrow" style="transform: rotate(${current.wind_direction_10m}deg); display: inline-block;"></i> ${current.wind_direction_10m}°</span></p>
+                        <p><i class="fas fa-moon"></i> ${current.is_day ? "Day" : "Night"}</p>
+                    </div>
+                `;
+            }
+
+        </script>
     </body>
 </html>
