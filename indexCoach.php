@@ -274,11 +274,11 @@
             </section>
 
             <!-- WEATHER SECTION -->
-            <section>
+            <section class="weatherSection" id="weatherSection">
                 <div class="weatherCtn">
                     <h2 class="weather-title">Weather Forecast</h2>
                     <h2 class="loc">Cochella, Empire Polo Club Indio, California</h2>
-                    <p>The weather forecast data is from Open Meteo API.</p>
+                    <p class="subtext">The weather forecast data is from Open Meteo API.</p>
                     <div id="forecast" class="forecast-grid"></div>
                     <div id="current-weather"></div>
                 </div>

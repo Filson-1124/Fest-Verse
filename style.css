@@ -800,6 +800,18 @@ dialog {
 
 /* MARIANNE ADDED */
 /* weather section */
+.weatherSection {
+  background-image: url(img/backgrounds/8.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
 .weatherCtn{
     display: flex;
     flex-direction: column;
@@ -814,6 +826,11 @@ dialog {
 }
 .loc{
   margin: 2rem 1rem 1rem 1rem;
+  color: #553b79;
+}
+
+.subtext{
+  color: #634988;
 }
 
 /* Grid layout */
@@ -830,12 +847,12 @@ dialog {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background: rgba(5, 13, 43, 0.801);
+    background: rgba(103, 111, 192, 0.849);
     backdrop-filter: blur(12px);
     border-radius: 18px;
     padding: 18px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    border: 2px solid #110364;
+    border: 2px solid #da9e65;
     min-width: 200px;
     width: 100%;
     box-sizing: border-box;
@@ -843,7 +860,7 @@ dialog {
 
 .top-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: flex-start;
     gap: 5px;
     /* background-color: red; */
@@ -856,22 +873,30 @@ dialog {
     justify-content: center;
     gap: 4px;
     flex: 1;
-    /* min-width: 0; */
+    min-width: 0;
+    width: auto;
+    overflow: hidden;
     /* background-color: blue; */
 }
 
-.top-left h3,
 .top-left .max-temp {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.top-left h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 .weather-icon {
-    font-size: 2.3rem;
     flex-shrink: 0;
+    width: 35px;
     text-align: right;
-    margin-left: 12px;
+    font-size: 2.3rem;
 }
 
 .icon-text {
@@ -894,18 +919,18 @@ dialog {
 }
 
 .max-temp {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #ffffff;
 }
 
 .sep {
-    font-size: 0.8rem;
-    color: #aaa;
+    font-size: 1rem;
+    color: #d8d8d8;
 }
 
 .min-temp {
-    font-size: 0.8rem;
-    color: #cacaca;
+    font-size: 1rem;
+    color: #f5f5f5;
 }
 
 /* Date */
@@ -928,10 +953,10 @@ dialog {
     right: 20px;           
     width: 180px;          
     padding: 12px;
-    background: rgba(5, 13, 43, 0.85);
+    background: rgba(103, 110, 192, 0.692);
     backdrop-filter: blur(10px);
     border-radius: 12px;
-    border: 1px solid #110364;
+    border: 2px solid #da9e65;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     z-index: 9999;         
     font-size: 0.8rem;
@@ -956,6 +981,7 @@ dialog {
     display: flex;
     align-items: center;
     gap: 4px;
+    color: white;
 }
 /* MARIANNE END */
 
@@ -1471,6 +1497,44 @@ main{
   }
 }
 
+.forecast-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    width: 95%;
+  }
+
+  .day-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .top-left h3,
+  .top-left .max-temp {
+    font-size: 0.9rem;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+  .icon-text {
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+  
+  .top-row {
+    gap: 10px;
+  }
+
+  .top-left h3 {
+    font-size: 0.9rem;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+
 }
 
 @media (max-width: 800px) {
@@ -1558,6 +1622,71 @@ main{
         display: none;
       }
     }
+
+    .forecast-grid {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .day-card {
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    /* Top row spacing */
+    .top-row {
+      gap: 12px;
+    }
+
+    .top-left h3 {
+      font-size: 0.85rem;
+    }
+
+    .max-temp,
+    .min-temp {
+      font-size: 0.75rem;
+    }
+
+    .weather-icon {
+      font-size: 1.8rem;
+      margin-left: 8px;
+    }
+    .current-card {
+    position: fixed; 
+    top: 20px;           
+    right: 20px;           
+    padding: 10px 20px;
+    background: rgba(103, 110, 192, 0.692);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 2px solid #da9e65;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 9999;         
+    font-size: 0.8rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+    .current-card .temp-icon {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .temp-icon .current-temp {
+        font-weight: bold;
+    }
+
+    .temp-icon .weather-icon {
+        font-size: 1.2rem;
+    }
+
+    .current-card .extra-info {
+        display: none;
+}
+
   }
   .heropage {
     background-image: url(img/backgrounds/finalMobileHomeScreen.jpg);
