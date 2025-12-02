@@ -8,32 +8,20 @@ if (isset($_POST['add'])) {
     $hits = $_POST['hit_songs'];
 
     // Handle image upload
-    $img_name = basename($_FILES["image"]["name"]);
-    $img = "uploads/" . $img_name;
-    move_uploaded_file($_FILES["image"]["tmp_name"], $img);
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0) {
+        $img_name = basename($_FILES["image"]["name"]);
+        $img = "uploads/" . $img_name;
+        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $img)) {
+            die("Failed to upload image.");
+        }
+    } else {
+        $img = null; // or handle a default image
+    }
 
-    $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
-    
-    $stmt->bind_param("ssss", $name, $desc, $hits, $img);
-
-    $stmt->execute();
-    
-    $stmt->close();
-    header("Location: admin_artist.php");
-}
-
-// Handle Delete
-if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-    $conn->query("DELETE FROM artists WHERE id=$id");
-}
-?>
-    // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $name, $desc, $hits, $img);
 
     if ($stmt->execute()) {
-        // Refresh the page
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     } else {
@@ -41,6 +29,17 @@ if (isset($_GET['delete'])) {
     }
 
     $stmt->close();
+}
+
+// Handle Delete Artist
+if (isset($_GET['delete'])) {
+    $id = intval($_GET['delete']);
+    $stmt = $conn->prepare("DELETE FROM artists WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -85,7 +84,6 @@ if (isset($_GET['delete'])) {
         </button>
     </form>
 </div>
-
 
 <h3 class="text-2xl font-semibold mb-3 text-gray-800">Existing Artists</h3>
 

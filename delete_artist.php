@@ -1,35 +1,30 @@
 <?php
-include 'db.php'; // your database connection
+include 'db.php';
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
-    // 1. Get the image file linked to this artist
-    $query = $conn->prepare("SELECT image_path FROM artists WHERE id = ?");
-    $query->bind_param("i", $id);
-    $query->execute();
-    $result = $query->get_result();
+    // Get image path
+    $stmt = $conn->prepare("SELECT image_path FROM artists WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result->num_rows === 1) {
-        $row = $result->fetch_assoc();
-        $imagePath = __DIR__ . "/" . $row['image_path'];
+    if ($row = $result->fetch_assoc()) {
+        $imagePath = $row['image_path'];
 
-        // 2. Delete the file from the folder
-        if (file_exists($imagePath)) {
-            unlink($imagePath); // delete image
+        // Delete image if it exists
+        if (!empty($imagePath) && file_exists($imagePath)) {
+            unlink($imagePath);
         }
 
-        // 3. Delete the database record
+        // Delete the artist record
         $delete = $conn->prepare("DELETE FROM artists WHERE id = ?");
         $delete->bind_param("i", $id);
+        $delete->execute();
 
-        if ($delete->execute()) {
-            // redirect back to admin page after deletion
-            header("Location: admin_artist.php");
-            exit;
-        } else {
-            echo "Failed to delete artist.";
-        }
+        header("Location: admin_artist.php");
+        exit;
     } else {
         echo "Artist not found.";
     }
