@@ -22,6 +22,8 @@
         <title>Coachella 2025</title>
     </head>
     <body>
+        <audio id="bgMusic" autoplay loop></audio>
+
         <!-- Sidebar Navigation -->
         <nav id="sidebar">
             <ul>
@@ -202,6 +204,14 @@
                 </div>
             </section>
 
+            <section class="trending">
+                <div class="trendingCtn">
+                    <h2>Last.fm – Top 10 Trending Tracks</h2>
+                    <div class="trending-wrapper">
+                        <?php include "trending_lastfm.php"; ?>
+                    </div>
+                </div>
+            </section>
 
             <!-- Map Section -->
             <section class="mapOfCoachella" id="maps" >
