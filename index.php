@@ -34,6 +34,7 @@ if (isset($_POST['login'])) {
   <title>Welcome to FestVerse</title>
   <link rel="icon" href="img/fvpics/festverselogo.png" type="image/png">
   <script src="https://cdn.tailwindcss.com"></script>
+ 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-[#fff8f5] font-sans scroll-smooth">
@@ -55,17 +56,41 @@ if (isset($_POST['login'])) {
 </div>
 
 <!-- Navigation Bar -->
-<header class="fixed top-0 w-full bg-[#302046] z-30">
-  <div class="flex justify-between items-center px-12 py-4">
+<header class="fixed top-0 w-full bg-[#302046] z-30 shadow">
+  <div class="flex justify-between items-center px-6 md:px-12 py-4">
+    
+    <!-- Logo -->
     <h1 class="text-[#ffdfd6] text-2xl font-bold font-[Merienda]">FestVerse</h1>
-    <nav class="flex flex-wrap items-center gap-4">
+
+    <!-- Hamburger button (mobile only) -->
+    <button 
+      onclick="toggleMenu()" 
+      class="text-[#ffdfd6] text-3xl md:hidden focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex items-center gap-4">
       <a href="#home"><button class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">Home</button></a>
       <a href="#about"><button class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">About</button></a>
       <a href="#festivals"><button class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">Festivals</button></a>
       <a href="#contact"><button class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">Contact</button></a>
-      <button onclick="openLogin()" class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">Admin's Dashboard</button>
+      <button onclick="openLogin()" class="text-[#ffdfd6] px-4 py-2 rounded-lg hover:bg-pink-600 hover:text-white transition">
+        Admin's Dashboard
+      </button>
     </nav>
   </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <nav id="mobileMenu" class="hidden flex overflow-x-auto gap-10 bg-[#302046] px-6 pb-4 w-auto md:hidden">
+    <a href="#home" class="py-2 text-[#ffdfd6] hover:text-white">Home</a>
+    <a href="#about" class="py-2 text-[#ffdfd6] hover:text-white">About</a>
+    <a href="#festivals" class="py-2 text-[#ffdfd6] hover:text-white">Festivals</a>
+    <a href="#contact" class="py-2 text-[#ffdfd6] hover:text-white">Contact</a>
+    <button onclick="openLogin()" class=" w-auto flex py-2 text-[#ffdfd6] hover:text-white text-left">
+      Admin's Dashboard
+    </button>
+  </nav>
 </header>
 
 <!-- Home Section -->
@@ -180,6 +205,25 @@ if (isset($_POST['login'])) {
   <p>© 2024 FestVerse. All rights reserved.</p>
 </footer>
 
-<script src="index.js"></script>
+<script>
+ 
+      function openLogin() {
+            document.getElementById("loginOverlay").style.display = "flex";
+        }
+
+        /* Close login popup */
+        function closeLogin() {
+            document.getElementById("loginOverlay").style.display = "none";
+            document.getElementById("errorMsg").style.display = "none";
+        }
+
+
+
+   function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+
+</script>
 </body>
 </html>

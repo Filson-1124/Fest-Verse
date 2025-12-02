@@ -95,20 +95,4 @@ document.addEventListener("click", (event) => {
 });
 
    /* Show login popup */
-        function openLogin() {
-            document.getElementById("loginOverlay").style.display = "flex";
-        }
-
-        /* Close login popup */
-        function closeLogin() {
-            document.getElementById("loginOverlay").style.display = "none";
-            document.getElementById("errorMsg").style.display = "none";
-        }
-
-      
-
-
-
-
-
-
+  
