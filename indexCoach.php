@@ -277,10 +277,11 @@
             <section class="weatherSection" id="weatherSection">
                 <div class="weatherCtn">
                     <h2 class="weather-title">Weather Forecast</h2>
-                    <h2 class="loc">Cochella, Empire Polo Club Indio, California</h2>
+                    <h2 class="loc">Coachella, Empire Polo Club Indio, California</h2>
                     <p class="subtext">The weather forecast data is from Open Meteo API.</p>
-                    <div id="forecast" class="forecast-grid"></div>
-                    <div id="current-weather"></div>
+                    <div class="forecast-grid">
+                        <?php include 'weather.php'; ?>
+                    </div>
                 </div>
             </section>
 
@@ -596,117 +597,5 @@
                 </div>
             </footer>
         </main>
-
-        <script>
-            const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=33.6803&longitude=-116.1739&daily=uv_index_max,weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,relative_humidity_2m,rain,visibility,showers,dew_point_2m&current=weather_code,temperature_2m,relative_humidity_2m,precipitation,is_day,wind_speed_10m,wind_direction_10m,rain&timezone=auto';
-
-            const weatherIcons = {
-                0: "☀️",
-                1: "🌤️",
-                2: "⛅",
-                3: "☁️",
-                45: "🌫️",
-                48: "🌫️",
-                51: "🌦️",
-                53: "🌦️",
-                55: "🌧️",
-                61: "🌧️",
-                63: "🌧️",
-                65: "🌧️",
-                71: "❄️",
-                73: "❄️",
-                75: "❄️",
-                80: "🌧️",
-                81: "🌧️",
-                82: "🌧️",
-                95: "⛈️",
-                96: "⛈️",
-                99: "⛈️"
-            };
-
-            async function getWeather() {
-                try {
-                    const res = await fetch(apiUrl);
-                    const data = await res.json();
-
-                    console.log(data);
-
-                    displayDaily(data.daily, data.current);
-                    displayCurrent(data.current);
-                } catch (error) {
-                    console.error("Weather API failed:", error);
-                }
-            }
-
-            getWeather();
-
-            function formatDate(dateStr) {
-                const date = new Date(dateStr);
-                return date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                });
-            }
-
-            function formatTime(dateStr) {
-                const date = new Date(dateStr);
-                return date.toLocaleTimeString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    hour12: true
-                });
-            }
-
-            function displayDaily(daily) {
-                const container = document.getElementById("forecast");
-                container.innerHTML = "";
-
-                daily.time.forEach((date, index) => {
-                    const max = daily.temperature_2m_max[index];
-                    const min = daily.temperature_2m_min[index];
-                    const uv = daily.uv_index_max[index];
-                    const sunrise = daily.sunrise[index];
-                    const sunset = daily.sunset[index];
-                    const code = daily.weather_code[index];
-
-                    container.innerHTML += `
-                        <div class="day-card">
-                            <div class="top-row">
-                                <div class="top-left">
-                                    <h3>${formatDate(date)}</h3>
-                                    <p class="max-temp">
-                                        <i class="fas fa-temperature-high"></i> ${max}°C 
-                                        <span class="sep">|</span> 
-                                        <span class="min-temp"><i class="fas fa-temperature-low"></i> ${min}°C</span>
-                                    </p>
-                                </div>
-                                <div class="weather-icon">${weatherIcons[code] || "❓"}</div>
-                            </div>
-                            <p class="icon-text"><i class="fas fa-sun"></i> UV Index: ${uv}</p>
-                            <p class="icon-text"><span class="material-icons">wb_sunny</span> Sunrise: ${formatTime(sunrise)}</p>
-                            <p class="icon-text"><span class="material-icons">nights_stay</span> Sunset: ${formatTime(sunset)}</p>
-                        </div>
-                        `;
-                });
-            }
-
-            function displayCurrent(current) {
-                const ctn = document.getElementById("current-weather");
-
-                ctn.innerHTML = `
-                    <div class="day-card current-card">
-                        <div class="top-row">
-                            <p class="current-temp"><i class="fas fa-temperature-high"></i> ${current.temperature_2m}°C</p>
-                            <div class="weather-icon">${weatherIcons[current.weather_code] || "❓"}</div>
-                        </div>
-                        <p><i class="fas fa-tint"></i> ${current.relative_humidity_2m}% <span>|</span> <span><i class="fas fa-cloud-showers-heavy"></i> ${current.rain}</span> </p>
-                        <p><i class="fas fa-wind"></i> ${current.wind_speed_10m} km/h <span>|</span> <span><i class="fas fa-location-arrow" style="transform: rotate(${current.wind_direction_10m}deg); display: inline-block;"></i> ${current.wind_direction_10m}°</span></p>
-                        <p><i class="fas fa-moon"></i> ${current.is_day ? "Day" : "Night"}</p>
-                    </div>
-                `;
-            }
-
-        </script>
     </body>
 </html>
