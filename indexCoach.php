@@ -204,7 +204,7 @@
                 </div>
             </section>
 
-            <section class="trending">
+            <section class="trendingSection" id="trendingSection">
                 <div class="trendingCtn">
                     <h2>Last.fm – Top 10 Trending Tracks</h2>
                     <div class="trending-wrapper">
