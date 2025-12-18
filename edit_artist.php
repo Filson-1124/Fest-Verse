@@ -4,7 +4,7 @@ include 'db.php';
 $id = $_GET['id'];
 $artist = $conn->query("SELECT * FROM artists WHERE id=$id")->fetch_assoc();
 
-// Handle Update
+
 if (isset($_POST['update'])) {
 
     $name = $_POST['name'];
@@ -33,7 +33,7 @@ if (isset($_POST['update'])) {
 <meta charset="UTF-8">
 <title>Edit Artist</title>
 
-<!-- ⭐ Tailwind CDN -->
+
 <script src="https://cdn.tailwindcss.com"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>

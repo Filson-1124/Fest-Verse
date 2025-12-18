@@ -1,47 +1,26 @@
 <?php
 include 'db.php';
 
-// Handle Add Artist
 if (isset($_POST['add'])) {
-    $name = $_POST['name'];
-    $desc = $_POST['description'];
-    $hits = $_POST['hit_songs'];
 
-    // Handle image upload
-    if (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0) {
-        $img_name = basename($_FILES["image"]["name"]);
-        $img = "uploads/" . $img_name;
-        if (!move_uploaded_file($_FILES["image"]["tmp_name"], $img)) {
-            die("Failed to upload image.");
-        }
-    } else {
-        $img = null; // or handle a default image
-    }
 
-    $stmt = $conn->prepare("INSERT INTO artists (name, description, hit_songs, image_path) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $desc, $hits, $img);
+    $name = htmlspecialchars($_POST['name']);
+    $desc = htmlspecialchars($_POST['description']);
+    $hits = htmlspecialchars($_POST['hit_songs']);
 
-    if ($stmt->execute()) {
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    } else {
-        echo "Failed to add artist: " . $stmt->error;
-    }
 
-    $stmt->close();
-}
+    $img = "uploads/" . $_FILES['image']['name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], $img);
 
-// Handle Delete Artist
-if (isset($_GET['delete'])) {
-    $id = intval($_GET['delete']);
-    $stmt = $conn->prepare("DELETE FROM artists WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $stmt->close();
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
+   
+    $sql = "INSERT INTO artists (name, description, hit_songs, image_path)
+            VALUES ('$name', '$desc', '$hits', '$img')";
+
+    mysqli_query($conn, $sql);
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +39,7 @@ if (isset($_GET['delete'])) {
 
 <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Manage Artists</h2>
 
-<!-- ADD ARTIST CARD -->
+
 <div class="w-full max-w-2xl mx-auto bg-white p-6 rounded-xl shadow mb-10">
     <h3 class="text-xl md:text-2xl font-semibold mb-4 text-gray-700">Add New Artist</h3>
 
@@ -89,7 +68,7 @@ if (isset($_GET['delete'])) {
 
 <h3 class="text-xl md:text-2xl font-semibold mb-3 text-gray-800">Existing Artists</h3>
 
-<!-- RESPONSIVE TABLE WRAPPER -->
+
 <div class="overflow-x-auto bg-white rounded-xl shadow">
 <table class="w-full text-left text-sm md:text-base">
     <thead>

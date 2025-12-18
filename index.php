@@ -1,23 +1,20 @@
 <?php
-// Start session to handle login state
 session_start();
-include 'db.php'; // Your database connection
+include 'db.php';
 
 $login_error = '';
 
 if (isset($_POST['login'])) {
+
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Simple query for admin login
-    $stmt = $conn->prepare("SELECT * FROM admins WHERE username = ? AND password = ?");
-    $stmt->bind_param("ss", $username, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $sql = "SELECT * FROM admins WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($conn, $sql);
 
-    if ($result->num_rows > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $_SESSION['admin'] = $username;
-        header("Location: admin_artist.php"); // Redirect to dashboard page
+        header("Location: admin_artist.php");
         exit;
     } else {
         $login_error = "Invalid login! Try again.";
@@ -211,7 +208,7 @@ if (isset($_POST['login'])) {
             document.getElementById("loginOverlay").style.display = "flex";
         }
 
-        /* Close login popup */
+      
         function closeLogin() {
             document.getElementById("loginOverlay").style.display = "none";
             document.getElementById("errorMsg").style.display = "none";

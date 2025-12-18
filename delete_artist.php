@@ -2,32 +2,29 @@
 include 'db.php';
 
 if (isset($_GET['id'])) {
+
     $id = intval($_GET['id']);
 
-    // Get image path
-    $stmt = $conn->prepare("SELECT image_path FROM artists WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
+  
+    $result = mysqli_query($conn, "SELECT image_path FROM artists WHERE id = $id");
+    $row = mysqli_fetch_assoc($result);
 
-    if ($row = $result->fetch_assoc()) {
+    if ($row) {
         $imagePath = $row['image_path'];
 
-        // Delete image if it exists
+     
         if (!empty($imagePath) && file_exists($imagePath)) {
             unlink($imagePath);
         }
 
-        // Delete the artist record
-        $delete = $conn->prepare("DELETE FROM artists WHERE id = ?");
-        $delete->bind_param("i", $id);
-        $delete->execute();
+        mysqli_query($conn, "DELETE FROM artists WHERE id = $id");
 
         header("Location: admin_artist.php");
         exit;
     } else {
         echo "Artist not found.";
     }
+
 } else {
     echo "Missing ID.";
 }
