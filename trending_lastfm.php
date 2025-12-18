@@ -1,5 +1,5 @@
 <?php
-$apiKey = getenv('LASTFM_API_KEY');
+$apiKey = 'f99405b2a2c63b0ffaf9ed96001f9985';
 
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : 10;
 if ($limit < 1) $limit = 1;
